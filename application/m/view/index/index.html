@@ -1,10 +1,1089 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bg-ff">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="telephone=no" name="format-detection">
+    <title>吃货天堂邦邦购</title>
+    <link rel="stylesheet" href="/wechat/css/common/base.css?v=201709011000">
+    <link rel="stylesheet" href="/wechat/css/common/common.css?v=201709121100">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+    <script src="/wechat/libs/jquery-2.1.1.min.js"></script>
+    <script src="/wechat/js/common/common.js?v=201709111800"></script>
+    <script src="/wechat/js/common/main.js?v=201707281400"></script>
+    <link rel="stylesheet" href="/wechat/css/swiper.min.css">
+    <link rel="stylesheet" href="/wechat/css/index-new_2017_09.css?v=5">
+    <style>
+        .wel-container {top: 0;}
+        .hot-sale-item{vertical-align: top;}
+        .coupons-container{margin-top: -3.2rem;}
+    </style>
 </head>
-<body>
-1111
-</body>
+
+<body class="bg-ee" id="homepage">
+<!-- 隐藏域 -->
+<div>
+    <input type="hidden" id="template" value="bbgmall"/>
+    <input type="hidden" id="title" value="吃货天堂邦邦购"/>
+    <input type="hidden" id="imgUrl" value="http://image.wb1688.com/1473217235925.jpg"/>
+    <input type="hidden" id="link" value="http://mall.wb1688.com/index?user_id=19591&template=bbgmall"/>
+    <input type="hidden" id="appId" value="5" />
+    <input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+    <input type="hidden" id="source" value="index" />
+</div>
+
+
+
+<!--content START-->
+<div class="content">
+    <!-- APP推广 -->
+    <div class="promotion flex ovh" id="promotion">
+        <span class="icon promotion-remove"></span>
+        <img class="promotion-img" src="http://image.wb1688.com/1500272430440.png" alt="appLogo">
+        <span class="promotion-text">
+            <p>前往APP客户端,</p>
+            <p>有更多惊喜哦~</p>
+        </span>
+        <a class="promotion-btn" href="https://a.app.qq.com/o/simple.jsp?pkgname=com.wb1688.bbg">立即下载</a>
+    </div>
+
+    <!--search START-->
+    <header class="p-abs">
+        <div class="search p-rel">
+            <a class="db" href="/goods/search/index?type=1&template=bbgmall">
+                <button class="search-btn p-abs"></button>
+                <input class="search-txt" type="search" readonly disabled>
+            </a>
+        </div>
+    </header>
+    <!--search END-->
+
+    <!--轮播图 START-->
+    <div class="swiper-container scroll-banner">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <a href="https://mall.wb1688.com/activity/activityGoodsDetail/548?template=bbgmall">
+                    <img src="http://image.wb1688.com/1505895038820.jpg">
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="https://mall.wb1688.com/activity/activityGoodsDetail/417?template=bbgmall">
+                    <img class="lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1504507667555.jpg">
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="https://mall.wb1688.com/activity/activityGoodsDetail/271?template=bbgmall">
+                    <img class="lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1500368608747.jpg">
+                </a>
+            </li>
+            <li class="swiper-slide">
+                <a href="https://mall.wb1688.com/activity/activityGoodsDetail/108?template=bbgmall">
+                    <img class="lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1499244766972.jpg">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--轮播图 END-->
+
+    <!--热门 START-->
+    <div class="swiper-container hot" id="hot">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide font0 flex">
+                <a class="dib cell" href="http://mall.wb1688.com/activityzone/flashSale/72?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517117212.png" alt="限时折扣">
+                    <p class="ellipsis hot-text">限时折扣</p>
+                </a>
+                <a class="dib cell" href="http://mall.wb1688.com/collection/2?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517126288.png" alt="新品上市">
+                    <p class="ellipsis hot-text">新品上市</p>
+                </a>
+                <a class="dib cell" href="http://mall.wb1688.com/collection/1?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517143052.png" alt="精选好货">
+                    <p class="ellipsis hot-text">精选好货</p>
+                </a>
+                <a class="dib cell" href="http://mall.wb1688.com/collection/3?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517175761.png" alt="汇吃专区">
+                    <p class="ellipsis hot-text">汇吃专区</p>
+                </a>
+                <a class="dib cell" href="https://mall.wb1688.com/enterprisePassage/list?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517185220.png" alt="企业通道">
+                    <p class="ellipsis hot-text">企业通道</p>
+                </a>
+            </li>
+            <li class="swiper-slide font0 flex">
+                <a class="dib cell" href="http://mall.wb1688.com/activityzone/flashSale/94?template=bbgmall">
+                    <img class="hot-img" src="http://image.wb1688.com/1507517190688.png" alt="区域电商">
+                    <p class="ellipsis hot-text">区域电商</p>
+                </a>
+            </li>
+            <li class="swiper-slide font0 flex">
+            </li>
+            <li class="swiper-slide font0 flex">
+            </li>
+            <li class="swiper-slide font0 flex">
+            </li>
+            <li class="swiper-slide font0 flex">
+            </li>
+        </ul>
+        <p class="swiper-pagination"></p>
+    </div>
+
+    <!--热门 END-->
+
+    <!--长广告位-->
+    <div class="advert">
+    </div>
+
+    <!--热卖推荐 START-->
+    <div class="hot-sales ">
+        <p class="hot-sale-title">
+            <i class="icon hot-sale-icon" style="background-image: url(/wechat/img/icon-hot-sale.png);"></i>
+            <span>热卖推荐</span>
+            <a href="../storeyMoreGoods?sortTitle=热卖推荐&hotGoods=6&template=bbgmall">
+                <span class="hot-sale-more">查看更多</span>
+            </a>
+        </p>
+        <div class="scroll-container">
+            <ul class="cl scroll-box">
+                <li class="hot-sale-item scroll-item ">
+                    <a href="https://mall.wb1688.com/goods/detail/4064?template=bbgmall">
+                        <img class="hot-sale-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1507688540045.jpg?imageView2/1/w/640">
+                        <p class="hot-sale-name ellipsis">北海野生墨鱼干 淡晒乌贼干 250g 3~4个</p>
+                        <div class="flex">
+                            <p class="hot-sale-desc ellipsis cell">
+                                淡干墨鱼手感比较轻，表面光滑，保持了墨鱼的原味，口感鲜香。
+                            </p>
+                            <span class="price"><em class="yuan">&#165;</em><strong>49.80</strong></span>
+                        </div>
+                    </a>
+                </li>
+                <li class="hot-sale-item scroll-item flash-sale-icon">
+                    <a href="https://mall.wb1688.com/goods/detail/3040?template=bbgmall">
+                        <img class="hot-sale-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1504686189781.jpg?imageView2/1/w/640">
+                        <div class="flex">
+                            <p class="hot-sale-name ellipsis cell">正宗阳澄湖大闸蟹 398型蟹券礼卡</p>
+                            <del class="lowest-pricce">&#165;398.00</del>
+                        </div>
+                        <div class="flex">
+                            <p class="hot-sale-desc ellipsis cell">
+                                秋风起，蟹味浓。
+                            </p>
+                            <span class="price"><em class="yuan">&#165;</em><strong>288.00</strong></span>
+                        </div>
+                    </a>
+                </li>
+                <li class="hot-sale-item scroll-item ">
+                    <a href="https://mall.wb1688.com/goods/detail/3698?template=bbgmall">
+                        <img class="hot-sale-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1500364626904.jpg?imageView2/1/w/640">
+                        <p class="hot-sale-name ellipsis">新疆特产 四色葡萄干</p>
+                        <div class="flex">
+                            <p class="hot-sale-desc ellipsis cell">
+                                四色葡萄组合装，无核白葡萄干，红玫瑰葡萄干，黑加仑葡萄干，树上黄葡萄干。
+                            </p>
+                            <span class="price"><em class="yuan">&#165;</em><strong>49.90</strong></span>
+                        </div>
+                    </a>
+                </li>
+                <li class="hot-sale-item scroll-item ">
+                    <a href="https://mall.wb1688.com/activity/activityGoodsDetail/413?template=bbgmall">
+                        <img class="hot-sale-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1504687137376.jpg?imageView2/1/w/640">
+                        <div class="flex">
+                            <p class="hot-sale-name ellipsis cell">正宗眉县徐香绿心猕猴桃</p>
+                            <del class="lowest-pricce">&#165;55.00</del>
+                        </div>
+                        <div class="flex">
+                            <p class="hot-sale-desc ellipsis cell">
+                                新鲜徐香绿心猕猴桃
+                            </p>
+                            <span class="price"><em class="yuan">&#165;</em><strong>46.90</strong></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--热卖推荐 END-->
+
+    <!--厨艺秀 START-->
+    <div class="cooking-skill ">
+        <a class="title" href="javascript:;">
+            <!-- <p class="bg-ff" style="line-height: 8rem;text-align: center">厨艺秀<i class="cooking-skill-icon"></i></p> -->
+            <img class="title-img lazyload" src="http://image.wb1688.com/1507863241399.jpg" data-src="">
+        </a>
+        <div class="cooking-skill-container">
+            <ul class="flex">
+                <li class="cell">
+                    <a href="/cook/videoIndex?template=bbgmall">
+                        <img class="cooking-skill-img" src="http://image.wb1688.com/1507876250112.png" width="65" height="65">
+                        <p class="cooking-skill-text">视频专区</p>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="/cook/menuIndex?template=bbgmall">
+                        <img class="cooking-skill-img" src="http://image.wb1688.com/1507876180993.png" width="65" height="65">
+                        <p class="cooking-skill-text">菜谱专区</p>
+                    </a>
+                </li>
+                <li class="cell">
+                    <a href="/cook/forumIndex?template=bbgmall">
+                        <img class="cooking-skill-img" src="http://image.wb1688.com/1507876264842.png" width="65" height="65">
+                        <p class="cooking-skill-text">论坛专区</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--厨艺秀 END-->
+
+    <!--商品列表 START-->
+    <div class="ovh" id="lists">
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=新鲜水果&storeyId=91&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513190234.jpg">
+                <!--<h2>新鲜水果</h2>
+                <p class="tips">各地水果已经集合 持续品尝新味</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3998?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1504691542447.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">蒙自甜石榴 果园现摘现发</p>
+                        </a>
+                        <p class="goods-desc line-clamp">籽粒饱满 鲜甜多汁</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>36.90</span>
+                            <del>&#165;56.90</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3998"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4018?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505206163200.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">陕西洛川苹果  12个</p>
+                        </a>
+                        <p class="goods-desc line-clamp">新鲜苹果  纯天然红富士 现摘现发</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>59.90</span>
+                            <del>&#165;68.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4018"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4034?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505892607471.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗新疆库尔勒香梨 5斤装/10斤装</p>
+                        </a>
+                        <p class="goods-desc line-clamp">梨城美味，西域圣果（新疆产地直发，顺丰空运）</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>59.90</span>
+                            <del>&#165;68.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4034"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3165?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483279166509.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗眉县徐香绿心猕猴桃</p>
+                        </a>
+                        <p class="goods-desc line-clamp">5斤24枚 入口软甜 富含维C</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>46.90</span>
+                            <del>&#165;55.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3165"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4032?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505726150553.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">【产自世界梨都】新鲜 安徽砀山梨 产地直发</p>
+                        </a>
+                        <p class="goods-desc line-clamp">12斤（16个~18个）/箱</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>49.90</span>
+                            <del>&#165;56.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4032"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4036?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505900689851.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">桂林恭城脆柿 清甜脆柿子</p>
+                        </a>
+                        <p class="goods-desc line-clamp">13-15个（约5斤）</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>26.80</span>
+                            <del>&#165;29.90</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4036"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=新鲜水果&storeyId=91&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=安心蔬菜&storeyId=113&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513210949.jpg">
+                <!--<h2>安心蔬菜</h2>
+                <p class="tips">不靠农药 只靠汗水的好蔬菜</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3183?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505197080324.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">湖北洪湖新鲜粉糯莲藕 5斤</p>
+                        </a>
+                        <p class="goods-desc line-clamp">软糯鲜粉 不止于新鲜</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>36.90</span>
+                            <del>&#165;48.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3183"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3134?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483495615470.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">福建漳浦六鳌红薯</p>
+                        </a>
+                        <p class="goods-desc line-clamp">简装5斤 软糯香甜 无公害 特有沙质土壤种植</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>26.90</span>
+                            <del>&#165;36.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3134"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4030?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1505442981116.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">新鲜干大蒜头</p>
+                        </a>
+                        <p class="goods-desc line-clamp">原生态种植，当天采摘发货</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>3.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4030"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3247?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483185420608.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗兰州鲜百合</p>
+                        </a>
+                        <p class="goods-desc line-clamp"> 香甜软糯，新鲜百合</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>42.90</span>
+                            <del>&#165;48.80</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3247"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3490?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1493798308063.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">海阳特产 白玉黄瓜</p>
+                        </a>
+                        <p class="goods-desc line-clamp">排毒养颜食品，色泽晶莹剔透、白中泛绿、绿中透白、宛若润玉</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>36.90</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3490"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3207?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483184792351.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗广西荔浦芋头</p>
+                        </a>
+                        <p class="goods-desc line-clamp">5斤 新鲜个大 粉糯香甜</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>35.80</span>
+                            <del>&#165;38.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3207"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=安心蔬菜&storeyId=113&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=休闲零食&storeyId=118&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513276849.jpg">
+                <!--<h2>休闲零食</h2>
+                <p class="tips">来自世界各地的美味</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3814?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1502352646126.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">浙江特产 干菜扣肉小酥饼</p>
+                        </a>
+                        <p class="goods-desc line-clamp">浙江特产小吃 龙游干菜酥饼</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>12.90</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3814"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4026?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1502262117234.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">沈师傅酱香鸡蛋干（2包）+夹心蛋（4个）组合装</p>
+                        </a>
+                        <p class="goods-desc line-clamp">四川特产小吃，不添加防腐剂 鸡蛋干开创者 新鲜蛋制品</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>16.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4026"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3504?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1494316759961.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">田哥卤牛肉</p>
+                        </a>
+                        <p class="goods-desc line-clamp">入口留香，纯卤美味；精选黄牛腱子肉，开袋即食</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>31.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3504"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3241?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483185201368.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">nabati纳宝帝奶酪威化饼干</p>
+                        </a>
+                        <p class="goods-desc line-clamp">200g盒装  印尼进口</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>14.50</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3241"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3524?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1495003884363.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">云南玫瑰鲜花饼</p>
+                        </a>
+                        <p class="goods-desc line-clamp">600g盒装，传统糕点</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>32.80</span>
+                            <del>&#165;48.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3524"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3243?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483185387192.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">台湾味竹炭竹叶花生</p>
+                        </a>
+                        <p class="goods-desc line-clamp">500g 炭烧黑皮</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>28.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3243"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=休闲零食&storeyId=118&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=山珍海味&storeyId=121&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513200325.jpg">
+                <!--<h2>山珍海味</h2>
+                <p class="tips">海陆空美味佳肴</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item flash-sale-icon">
+                        <a href="/goods/detail/3040?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483186494842.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗阳澄湖大闸蟹 398型蟹券礼卡</p>
+                        </a>
+                        <p class="goods-desc line-clamp">公3.0-3.2两 母2.0-2.2两/6只装</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>288.00</span>
+                            <del>&#165;398.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3040"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4068?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1507623106803.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">天然淡晒 鱿鱼干 250g</p>
+                        </a>
+                        <p class="goods-desc line-clamp">天然淡晒鱿鱼干 原味 口感鲜香</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>68.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4068"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4064?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1507617498977.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">北海野生墨鱼干 淡晒乌贼干 250g 3~4个</p>
+                        </a>
+                        <p class="goods-desc line-clamp">新鲜海捕墨鱼 淡晒墨鱼干原味口感鲜香</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>49.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4064"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/4063?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1507617898408.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">北海淡晒章鱼干 淡晒八爪鱼 250g</p>
+                        </a>
+                        <p class="goods-desc line-clamp">天然淡晒章鱼干 原味 口感鲜香</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>49.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="4063"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3294?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1484622241375.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">大湖生态生鲜活甲鱼</p>
+                        </a>
+                        <p class="goods-desc line-clamp">2年生、3年生 多种重量规格</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>258.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3294"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/2903?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483237097707.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">福建古田银耳干</p>
+                        </a>
+                        <p class="goods-desc line-clamp">200g 朵小紧密 胶质浓稠</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>28.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="2903"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=山珍海味&storeyId=121&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=粮油副食&storeyId=117&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513236565.jpg">
+                <!--<h2>粮油副食</h2>
+                <p class="tips">安心厨房餐桌的基础建设</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3964?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1503974645763.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">云南玫瑰鲜花酱 240g*2瓶</p>
+                        </a>
+                        <p class="goods-desc line-clamp"></p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>36.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3964"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3300?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1486109946354.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">新疆 优质香米</p>
+                        </a>
+                        <p class="goods-desc line-clamp">5kg 香味馥郁 口感爽滑 有嚼劲</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>88.00</span>
+                            <del>&#165;98.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3300"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3492?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1493867829034.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">北大荒亲民有机面条 7种口味</p>
+                        </a>
+                        <p class="goods-desc line-clamp">亲民有机，营养生活</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>69.90</span>
+                            <del>&#165;78.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3492"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3442?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492410425591.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">禾然有机特级黄豆酱油</p>
+                        </a>
+                        <p class="goods-desc line-clamp">历久弥香，由酿而生，色香味俱全</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>25.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3442"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3446?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1493100446401.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">禾然有机儿童酱油</p>
+                        </a>
+                        <p class="goods-desc line-clamp">历久弥香，由酿而生，色香味俱全</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>57.60</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3446"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/2725?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483189888085.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">东北黑糯米</p>
+                        </a>
+                        <p class="goods-desc line-clamp">400g 颗粒饱满 口感香糯</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>12.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="2725"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=粮油副食&storeyId=117&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=肉禽蛋品&storeyId=116&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513285477.jpg">
+                <!--<h2>肉禽蛋品</h2>
+                <p class="tips">唯有遵循生态法则 才有原生好滋味</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3454?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492745647709.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">益阳洞庭湖咸鸭蛋</p>
+                        </a>
+                        <p class="goods-desc line-clamp">20枚咸鸭蛋，入口松沙，咸香细嫩</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>38.90</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3454"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3450?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492676224343.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">青松无铅松花皮蛋</p>
+                        </a>
+                        <p class="goods-desc line-clamp">20枚，湖南老字号，无铅皮蛋，营养健康，满口留香</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>36.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3450"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3452?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492681710242.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">益阳青松鸳鸯蛋</p>
+                        </a>
+                        <p class="goods-desc line-clamp">10枚无铅松花皮蛋+10枚咸鸭蛋</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>39.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3452"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3229?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483186356428.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">正宗广西北部湾红树林海鸭蛋</p>
+                        </a>
+                        <p class="goods-desc line-clamp">20枚 咸海鸭蛋 起沙多油</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>38.80</span>
+                            <del>&#165;42.00</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3229"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3458?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492756537909.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">益阳青松鸳鸯蛋 福寿双全38枚</p>
+                        </a>
+                        <p class="goods-desc line-clamp">19枚无铅松花皮蛋+19枚咸鸭蛋</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>108.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3458"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3460?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1492755043912.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">益阳青松鸳鸯蛋 红双喜礼盒装</p>
+                        </a>
+                        <p class="goods-desc line-clamp">9枚无铅松花皮蛋+9枚咸鸭蛋</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>59.90</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3460"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=肉禽蛋品&storeyId=116&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=茶饮 · 冲调 · 酒&storeyId=119&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513294990.jpg">
+                <!--<h2>茶饮 · 冲调 · 酒</h2>
+                <p class="tips">给嘴巴不一样的味道</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3966?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1504145316514.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">十五年陈酿 黄酒 浙江绍兴花雕酒</p>
+                        </a>
+                        <p class="goods-desc line-clamp">品饮绍兴花雕，方知黄酒真味</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>29.80</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3966"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3302?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1486172903856.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">原味苦荞茶 196g</p>
+                        </a>
+                        <p class="goods-desc line-clamp">降血糖、降血脂，增强人体免疫力</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>24.50</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3302"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3781?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1501126050459.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">台湾原装进口 黑糖 250g/瓶</p>
+                        </a>
+                        <p class="goods-desc line-clamp">手工古法制造</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>39.90</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3781"></span>
+                    </li>
+                    <li class="goods-item flash-sale-icon">
+                        <a href="/goods/detail/3464?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1493015465446.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">古法自酿 杨梅酒 2瓶</p>
+                        </a>
+                        <p class="goods-desc line-clamp">255ml/瓶*2 古法酿制 无添加 精美包装 送礼佳品</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em>69.90</span>
+                            <del>&#165;75.80</del>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3464"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3739?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1500016433481.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">澳大利亚速溶全脂奶粉</p>
+                        </a>
+                        <p class="goods-desc line-clamp">1kg/袋</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>118.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3739"></span>
+                    </li>
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3380?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1488276171709.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">青海黑枸杞礼盒装</p>
+                        </a>
+                        <p class="goods-desc line-clamp">70克</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>169.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3380"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=茶饮 · 冲调 · 酒&storeyId=119&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div class="index-list">
+            <a class="title" href="/storeyMoreGoods?sortTitle=礼品 · 礼品卡&storeyId=120&template=bbgmall">
+                <img class="title-img lazyload" src="/wechat/img/floor-more.png" data-src="http://image.wb1688.com/1507513302105.jpg">
+                <!--<h2>礼品 · 礼品卡</h2>
+                <p class="tips">不要独享美味</p>
+                -->
+            </a>
+            <div class="goods-list">
+                <ul class="font0">
+                    <li class="goods-item ">
+                        <a href="/goods/detail/3259?template=bbgmall">
+                            <img class="goods-img lazyload" src="/wechat/img/transparent.png" data-src="http://image.wb1688.com/1483430197751.jpg?imageView2/1/w/348/h/290">
+                            <p class="goods-name ellipsis">邦邦购礼品卡</p>
+                        </a>
+                        <p class="goods-desc line-clamp">50/100/300/500/1000</p>
+                        <p class="goods-price">
+                            <span class="price"><em class="yuan">&#165;</em><strong>50.00</strong></span>
+                        </p>
+                        <span class="add-cart icon i-cart" data_id="3259"></span>
+                    </li>
+                    <!--more-->
+                    <!--<li class="scroll-item more">
+                        <a href="/storeyMoreGoods?sortTitle=礼品 · 礼品卡&storeyId=120&template=bbgmall">
+                        <div>
+                            <p class="border-bottom">查看更多</p>
+                            <p>See More</p>
+                        </div>
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <!--商品列表 END-->
+    </div>
+</div>
+<!--content END-->
+
+<!-- 返回顶部 -->
+<div class="backToTop"><img src="/wechat/img/icon-top.png"></div>
+
+<!--加入购物车-->
+<div class="addCart" id="add-cart">
+    <h4 class="p-rel">成功加入购物车<span class="hidePopup"></span></h4>
+    <ul class="list">
+        <li>
+            <p class="list_cover"><img src=""></p>
+            <p class="remark">您以普通价格购买了</p>
+            <p class="list_title line-clamp"></p>
+            <p class="cartCount">加入数量：1</p>
+            <p class="totalMoney">总计金额：<em class="yuan">&#165;</em>99.00</p>
+        </li>
+    </ul>
+    <p class="tips">如需以更优惠的价格购买，请进到商品详情页参加商品促销活动</p>
+    <div class="btn flex">
+        <a class="goodsDetail cell" href="">参与活动</a>
+        <input class="continueBuy hidePopup cell" type="button" value="继续购物">
+        <input class="goBuy hidePopup cell" type="button" value="去结算">
+    </div>
+</div>
+
+
+<!--底部选项卡-->
+<footer class="bottom-fix flex bottom-tab " id="bottom-bar">
+    <a class="cell bottom-item" href="/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">首页</p>
+    </a>
+    <a class="cell bottom-item" href="/goods/sort?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">分类</p>
+    </a>
+    <a class="cell bottom-item" href="/activity/group?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">团购</p>
+    </a>
+    <a class="cell bottom-item" href="/cart/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <i class="" id="goods-cart-count"></i>
+        <p class="bottom-name">购物车</p>
+    </a>
+    <a class="cell bottom-item" href="/user/center?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">我的</p>
+    </a>
+</footer>
+
+<script>
+    var $bottomBar = $('#bottom-bar'),
+        $bottomName = $bottomBar.find('p');
+    //判断在那一页
+    if (window.location.pathname == '/index') {
+        $bottomBar.find('a').eq(0).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/goods/sort') {
+        $bottomBar.find('a').eq(1).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/activity/group') {
+        $bottomBar.find('a').eq(2).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/cart/index') {
+        $bottomBar.find('a').eq(3).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/user/center') {
+        $bottomBar.find('a').eq(4).addClass('active').siblings().removeClass('active');
+    }
+    $.ajax({
+        url: '/bottomBar',
+        type: 'get',
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            if (res.code == 0 && typeof res.obj == 'object') {
+                var data = res.obj;
+                var aColor = data.color.split(',');
+                var name = data.name.split(',');
+                var cssText = '.bottom-tab{opacity: 1;}'
+                    + '.bottom-item .bottom-icon{background-image: url(' + data.normalSizeIcon + ');}'
+                    + '.bottom-item{color: ' + aColor[0] + ';}'
+                    + '.bottom-item.active{color: ' + aColor[1] + ';}';
+                loadStyleString(cssText);
+                for (var i = 0; i < name.length; i++) {
+                    $bottomName.eq(i).html(name[i]);
+                }
+            } else {
+                loadStyleString('.bottom-tab{opacity: 1;}');
+                console.log(res.message);
+            }
+        },
+        error: function(res) {
+            loadStyleString('.bottom-tab{opacity: 1;}');
+            console.log(res.responseText);
+        }
+    });
+</script>
+
+<script src="/wechat/js/share/initShare.js?v=201706291059"></script>
+<script src="/wechat/libs/lazysizes.min.js?v=4"></script>
+<script src="/wechat/libs/swiper.min.js"></script>
+<script src="/wechat/js/goods/addCart.js?v=201710311000"></script>
+<script src="/wechat/js/goods/index.js?v=201706071800"></script>
+<script>
+    $(function() {
+        var oLi = $('#hot .swiper-slide');
+        for (var i = 0;i < oLi.length;i++) {
+            if (oLi.eq(i).find('a').length == 0) oLi.eq(i).remove();
+        }
+        if (oLi.length < 1) return;
+        var hotBanner = new Swiper('#hot', {
+            observer: true,
+            observeParents: true,
+            preloadImages: false,
+            autoplayDisableOnInteraction: false,
+            direction: "horizontal",
+            pagination: ".swiper-pagination",
+        });
+    })
+    $(function() {
+        pushHistory();
+        //阻止返回键
+        window.addEventListener("popstate", function(e) {
+            pushHistory();
+            sessionStorage.clear();
+        }, false);
+
+        //关闭推广
+        var oPromotion = $('#promotion');
+
+        oPromotion.on('touchstart mousedown', '.promotion-remove', function() {
+            sessionStorage.setItem('indexPromotionRemove', 'true');
+            oPromotion.slideUp(300);
+        })
+            .on('click', '.promotion-remove', function(e) {
+                e.preventDefault();
+            });
+
+        /*if (!supportsCSS) return;
+        if (sessionStorage.getItem('indexPromotionRemove') == 'true') {
+            oPromotion.hide();
+        }
+        else {
+            oPromotion.slideDown(300);
+            if (CSS.supports('display', '-webkit-box')) oPromotion.css({display: '-webkit-box'});
+            if (CSS.supports('display', '-webkit-flex')) oPromotion.css({display: '-webkit-flex'});
+            if (CSS.supports('display', 'flex'))oPromotion.css({display: 'flex'});
+        }*/
+        if (supportsCSS) promotionInit();
+    });
+
+    //返回重定向首页
+    function pushHistory() {
+        var state = {
+            title: 'title',
+            url: '#'
+        };
+        window.history.pushState(state, 'title', '');
+    }
+
+    //推广初始化
+    function promotionInit() {
+        var oPromotion = $('#promotion');
+        if (sessionStorage.getItem('indexPromotionRemove') == 'true') {
+            oPromotion.hide();
+        }
+        else {
+            oPromotion.slideDown(300);
+            if (CSS.supports('display', '-webkit-box')) oPromotion.css({display: '-webkit-box'});
+            if (CSS.supports('display', '-webkit-flex')) oPromotion.css({display: '-webkit-flex'});
+            if (CSS.supports('display', 'flex')) oPromotion.css({display: 'flex'});
+        }
+    }
+</script>
+<div style="display:none">
+    <script type="text/javascript">
+
+        var path=window.location.host;
+
+        if(path=="mall.wangbang.cc"){
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+        }
+        else if(path=="mall.wb1688.com"){
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+        }
+
+    </script>
+</div></body>
+
 </html>
