@@ -1,10 +1,12 @@
 <?php
 namespace app\m\controller;
+use think\controller;
 
-class Index
+class Index extends controller
 {
     public function index()
     {
-        return 'hello';
+        $data = ['name'=>'thinkphp','url'=>'thinkphp.cn'];
+        return ['data'=>$data,'code'=>1,'message'=>'操作完成'];
     }
 }
