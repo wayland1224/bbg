@@ -1,0 +1,49 @@
+@charset "utf-8";
+body{font-size: 1.4rem; color: #171717; background: #eee;}
+/*地址为空*/
+.address-empty{overflow: hidden; height: 100vh; background: #fff;}
+.address-empty div{height: 50%;}
+.address-empty .top{background: url(../img/icon-address-empty.png) no-repeat center bottom; background-size: 8.3rem 10.9rem;}
+.address-empty .bottom p{padding-top: 1.5rem; font-size: 1.4rem; text-align: center;}
+/*~~~~~~地址列表 START~~~~~~*/
+/*收货地址*/
+.address-list section{margin-left: 2.9rem;}
+.address-list .item{padding: .9rem 1.7rem 0 1.4rem; margin-bottom: 0.5rem; background: #fff;}
+.address-list .address-title{line-height: 3.5rem;}
+.address-list .address-info{line-height: 2.1rem; padding-bottom: .9rem;}
+.address-list .address-info .select{display: none;}
+/*用户操作*/
+/*收货地址*/
+.address-list section .address-action{line-height: 3rem;}
+.address-list .address-action{line-height: 3.8rem; border-top: .1rem dashed #dcdcdc;}
+.address-list .address-action .icon{top: .2rem; width: 1.5rem; height: 1.5rem; margin-right: .5rem;}
+aside .icon,
+.address-list .set-default .icon{top: .5rem; width: 1.9rem; height: 1.9rem; border: .1rem solid #ccc; border-radius: 50%;}
+/*设置为默认地址 START*/
+.default-setting .set-default,
+.address-info .select{color: #f9cd02;}
+.default-setting aside .icon,
+.default-setting .set-default .icon{border: 0; background: url(../img/icon-select.png) center; background-size: 1.9rem 1.9rem;}
+/*收货地址*/
+.default-setting .address-info .select{display: inline-block; margin-right: .6rem;}
+/*设置为默认地址 END*/
+.address-list .address-del{padding-left: 1rem;}
+.address-list .address-edit .icon{background-image: url(../img/icon-address-edit.png); background-size: 1.5rem 1.5rem;}
+.address-list .address-del .icon{background-image: url(../img/icon-address-del.png); background-size: 1.5rem 1.5rem;}
+/*aside START*/
+aside .icon{display: inline-block; top: 3.8rem;}
+/*aside END*/
+/*~~~~~~地址列表 END~~~~~~*/
+/*~~~~~~添加地址 START~~~~~~*/
+.add-address-btn{border: 0; height: 4.8rem; font-size: 1.6rem; line-height: 4.8rem; text-align: center; letter-spacing: .1rem; color: #fff; background: #f9cd02;}
+/*~~~~~~添加地址 END~~~~~~*/
+/*~~~~~~弹窗~~~~~~*/
+/*遮罩层*/
+.cover{z-index: 110;}
+/*添加新地址*/
+.address-save{padding: 0 1.9rem;}
+.address-save .save-btn{display: block; font: 1.6rem/4.2rem ""; border-radius: .5rem; background-color: #f9cd02; color: #fff; text-align: center;}
+/*添加地址信息*/
+/*添加地址信息*/
+.add-address-info{margin-bottom: 5rem; background-color: #fff;}
+.add-address-info dd{border-bottom: .1rem solid #e5e5e5;}

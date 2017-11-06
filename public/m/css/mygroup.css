@@ -1,0 +1,19 @@
+@charset "utf-8";
+body{background-color: #eee;}
+nav,
+.myorder-list{background-color: #fff;}
+/*~~~~~~nav~~~~~~*/
+nav{position: fixed; z-index: 100; top: 0; width: 100%; max-width: 64rem;}
+nav [class*=border].border-bottom:after{bottom: -.1rem; background: #ccc;}
+nav li{position: relative; z-index: 1; font-size: 1.4rem; line-height: 4rem; text-align: center;}
+nav li span{display: inline-block; border-bottom: .2rem solid transparent;}
+nav .current span{color: #f9cd02; border-color: #f9cd02;}
+/*~~~~~~myorder-list~~~~~~*/
+.swiper-slide:nth-of-type(2) .icon{display: none;}
+.swiper-slide:nth-of-type(3) .tip,
+.swiper-slide:nth-of-type(3) .fail{display: none;}
+.swiper-slide:nth-of-type(4) .tip,
+.swiper-slide:nth-of-type(4) .success{display: none;}
+.main{margin-top: 4.6rem;}
+.main .title .icon{position: absolute; top: .7rem; right: 1.4rem; width: 5.5rem; height: 5.5rem; background: url(../img/icon-group-success.png) no-repeat center; background-size: 100% 100%;}
+.main .title .fail{background-image: url(../img/icon-group-fail.png);}

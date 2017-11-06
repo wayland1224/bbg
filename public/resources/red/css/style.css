@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+/*logo*/
+	.logo { background:url(../img/logo.png)}
+
+
+/*cloud*/
+	.cloud_store .hd .on:after { border-top-color:#f05050 !important}
+
+
+/*color*/
+	.color,
+	.follow span,
+	.foot li.navCur a,
+	.list_name,k
+	.pay_back a,
+	.cloud .hd .on,
+	.detail_nav li.detail_cur,
+	.manage_nav li.manage_cur,
+	.sort_nav li.sort_cur {
+		color:#f05050 !important
+	}
+
+
+/*bg*/
+	.bg,
+	.radioStyle:checked + label,
+	.checkStyle:checked + label {
+		background-color:#f05050 !important
+	}
+	.foot2 .fr a,
+	.foot li.navCur a span,
+	.personHead,
+	.store_banner,
+	.store,
+	.addCart h1,
+	.star em.starCur,
+	.cloud_store .hd .on,
+	.comment .hd .on,
+	.comment_nav1 li.comment_cur1 {
+		background-color:#f05050
+	}
+
+
+/*borderColor*/
+	.list_name,
+	.sort_nav li.sort_cur {
+		border-color:#f05050 !important
+	}

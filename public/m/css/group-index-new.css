@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/* ::-webkit-scrollbar{display: none;} */
+/*标识*/
+.plate{/*普通*/ color: #ffad0e; border: .1rem solid #ffad0e;}
+.plate.lottery{/*抽奖*/ color: #f84e57; border-color: #f84e57;}
+.plate.preorder{/*预购*/ color: #987ad1; border-color: #987ad1;}
+.plate.community{/*邻家*/ color: #01aebc; border-color: #01aebc;}
+.plate.new{/*新人*/ color: #1fc4f4; border-color: #1fc4f4;}
+.plate.free{/*试用*/ color: #515f8c; border-color: #515f8c;}
+nav, .nav{background-color: #fff;}
+.nav, .rule-entry{margin: 1rem 0;}
+nav{z-index: 2; width: 100%; padding-bottom: .1rem;}
+nav ul{overflow: scroll; -webkit-overflow-scrolling: touch; overflow-scrolling: touch; white-space: nowrap; font-size: 0; -webkit-text-size-adjust: 100%;}
+nav li{display: inline-block; text-align: center;}
+nav li a{display:block; padding: 0 .7rem; min-width: 7rem; font-size: 1.4rem; line-height: 3rem; color: #a8a8a8; border-bottom: .1rem solid transparent;}
+nav li.current a{color: #171717; border-color: #f00;}
+.nav .cell{ text-align: center; border: 0;}
+.nav-icon{display: block; margin: 0 auto; width:3.3rem;height: 4.8rem; background: url(../img/group-index/group-index_01.png) no-repeat center bottom; background-size: 3.3rem 3.3rem;}
+.lottery .nav-icon{background-image: url(../img/group-index/group-index_02.png);}
+.preorder .nav-icon{background-image: url(../img/group-index/group-index_03.png);}
+.community .nav-icon{background-image: url(../img/group-index/group-index_04.png);}
+.new .nav-icon{background-image: url(../img/group-index/group-index_05.png);}
+.free .nav-icon{background-image: url(../img/group-index/group-index_06.png);}
+.nav-text{line-height: 3.4rem;}
+.rule-entry{display: block; height: 4rem; background:#fff url(../img/group-index/rule-entry.png) no-repeat center; background-size: 18.2rem auto;}
+.goods-list{margin-bottom:6.2rem;border:0;}
+.goods-list li{margin:1rem 0;}
+.goods-list li:first-of-type{margin-top: 0;}
+.goods-list li p{margin:0 1.4rem 0 1.2rem;}
+.goods-list .list_title{margin-left:6.8rem; line-height: 3.8rem;}
+.goods-list .list_title .plate{position: absolute; margin: 1rem 0 0 -5.6rem; padding: 0 .6rem; font-size: 1.2rem; line-height: 1.4; border-radius: .2rem;}
+.goods-list .shenqing{margin-left: .5rem;font-size: 1.2rem; padding-top: .1rem; color: #999999; background: #fff;}
+.goods-list .shandian{margin-left: .5rem;padding-left: 1.2rem;padding-top: .1rem;max-width:7em; font-size: 1.2rem; background: url(../img/group-index/flash_03.png) no-repeat .2rem 1rem; background-size: .8rem 1.5rem;}
+.goods-list .list_final .plate-num{margin-right: .5rem; padding-left: 2.4rem; padding-top: .1rem; background: url(../img/group-index/group-index_07.png) no-repeat 0 0; background-size: 2rem 1.6rem;}
+.goods-list .list_final a.fl-r{right: 1.4rem;}
+.goods-list .list_final a.fl-r.end{padding: 0 0.6rem;width: auto;min-width:6.4rem;background: #fff;color: #f9cd02;border: .1rem solid #f9cd02;}
+.goods-list li p.list-state{position: absolute; margin-top:-3rem; margin-left: 0; margin-right: .5rem; padding-left: 4rem; width: 100%; line-height: 3rem; background: url(../img/shijian.png) no-repeat 1rem; background-size: 1.7rem 1.7rem; color: #fff; background-color:rgba(0,0,0,.5);}
+.list-state em{color: #efc61d;}
+.goods-list .border-bottom:after{bottom: 1rem !important; background-color: #a0a0a0;}
+.goods-list .border-bottom{padding-top: 1rem;width: 80%;margin: 0 auto;text-align: center;}
+.goods-list .border-bottom p{background-color: #eee;position: relative; z-index: 1; display: inline-block; padding: 0 1rem; min-width: 10rem; height: 2rem; color: #a7a7a7;}
+/*商品列表为空*/
+.goods-list-empty{display: none; position: relative;z-index:1; overflow: hidden; width: 100%; height: 100vh; text-align: center; background: #fff url(../img/icon-group-goods-list-empty.png) no-repeat center; background-size: 26rem 18rem;}
+.goods-list-empty p{position: absolute; top: 50%; padding-top: 10rem; width: 100%; font-size: 1.4rem; color: #bfbfbf; text-align: center; letter-spacing: 1px;}
+/*拼团玩法*/
+.groupon-rule nav{position: fixed;}
+.groupon-rule nav li span { display: block; padding: 0 .7rem; min-width: 7rem; font-size: 1.4rem; line-height: 3rem; color: #a8a8a8; border-bottom: .1rem solid transparent; }
+.groupon-rule nav li.current span { color: #282828; border-color: #f00; }
+.groupon-rule .rule-list .swiper-slide { padding-top: 32px; height: 100vh; overflow-y: auto;}
+.groupon-rule .rule-list img.lazyload, .groupon-rule .rule-list img.lazyloading{ margin-top: -3.2rem; min-height:100%;}

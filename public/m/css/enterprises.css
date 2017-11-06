@@ -1,0 +1,70 @@
+@charset "utf-8";
+/*~~~~~~ 列表页 start ~~~~~~*/
+/*搜索框*/
+header{z-index: 1; }
+/*提示信息*/
+.list-tips{margin: 1rem 2.2rem 2.5rem;font-size:1.2rem;line-height:1.5;color: #666;}
+/*列表*/
+.enterprise-list{margin:1rem 1.2rem;text-align: center;}
+.enterprise-list > p{margin-top:8rem;}
+.enterprise-list section{margin:1rem 0;background-color: #fff;border-radius: .5rem;box-shadow: 0 .2rem .1rem #a1a1a1;}
+.enterprise-list section div{display: table-cell;width:100vw;height:25.33vw;max-height:16.2rem;vertical-align: middle;}
+.enterprise-list section img{padding:1rem;max-height:25.33vw;}
+.enterprise-list section p{padding:0 .8rem;line-height: 3rem;color:#333;}
+.enterprise-list section p:after{background:#ccc;}
+@media screen and (min-width: 640px){.enterprise-list section div{height:16.2rem;}
+ .enterprise-list section img{max-height:16.2rem;}}
+/*~~~~~~ 列表页 end ~~~~~~*/
+
+/*~~~~~~ 企业套餐 start ~~~~~~*/
+/*header*/
+.info{padding:1.5rem 1.2rem 0;}
+.info > div{display: table-cell;width:5.8rem;height:5.8rem;text-align:center;vertical-align: middle;}
+/* .info img{position: absolute;width:5.8rem;height:5.8rem;border-radius: 50%;} */
+.info h2{margin-left: 6.8rem; font-size: 1.4rem; font-weight: 400; line-height: 2.9rem;/* color:#4c4c4c; */}
+.info h2:first-of-type{margin-top:-5.8rem;}
+.info p{padding:1rem 0 3rem;font-size: 1.2rem;line-height:1.5;text-indent: 2em;color:#999;}
+/*列表*/
+.combo-list-empty{position: relative;z-index:1; overflow: hidden; width: 100%; height: 100vh; text-align: center; background: #fff url(../img/icon-group-goods-list-empty.png) no-repeat center; background-size: 26rem 18rem;background-position-y:30%;}
+.combo-list-empty p{position: absolute;top:33%;width:100%;padding-top:12rem;font-size:1.4rem;letter-spacing:.1rem;color:#bfbfbf;}
+
+.enterprise-goods-list section{margin: 1rem 0;text-align: center;background-color: #fff;}
+.enterprise-goods-list .package:before{content:"";position: absolute;border-top: 0px solid #f9cd02;border-left:6rem solid #f9cd02;border-bottom: 6rem solid transparent;}
+.enterprise-goods-list section i{position: absolute;font-size: 1.3rem;line-height: 4rem;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+.enterprise-goods-list section img{width:100%;height:46.67vw;max-height:30rem;}
+.enterprise-goods-list section h4{line-height:2;font-weight: 400;color:#161616;}
+.enterprise-goods-list section p{font-size:1.2rem;line-height:1.5;color:#a7a7a7;}
+.enterprise-goods-list section div{font-size:1.2rem;color:#8d8d8d;}
+.enterprise-goods-list section .price{margin-right:1rem;font-size:1.9rem;line-height:3rem;color:#ff0101;}
+.enterprise-goods-list section del{color:#9d9d9d;}
+#load-more{padding:.8rem 0;text-align: center;}
+#load-more span{display: block; margin: 0 auto; width: 8rem; border-radius: .3rem; background: #989874; color: #fff; line-height: 2rem;}
+#load-more.loading{background: #fff url(../img/loading.gif) no-repeat center;background-size: 3rem 3rem;}
+
+/*.popup*/
+.popup{display: none; position: fixed; z-index: 110; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 80vw; max-width: 51rem; background: #fff; border-radius: .5rem;}
+.popup .title{line-height: 5rem; text-align: center;}
+.popup .btn{line-height: 4.8rem; text-align: center; letter-spacing: .1rem; border: 0;}
+.popup .border-top:after,
+.popup .border-center:before,
+.popup .border-h > :before{background: #ddd;}
+.popup .border-center:before{margin: 0;}
+.popup li{margin: 0 6vw;}
+@media screen and (min-width: 640px){.popup li{margin-left:3.8rem; margin-right:3.8rem;}}
+.popup li .item-inner{position: relative; min-height: 2.2rem; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; justify-content: space-between; -webkit-box-align: center; -webkit-align-items: center; align-items: center;}
+.popup .item-inner .item-title{-webkit-box-shrink: 0; -webkit-flex-shrink: 0; flex-shrink: 0;}
+.popup .item-inner .item-input{-webkit-box-flex: 1; -webkit-flex-shrink: 1; flex-shrink: 1; margin: 0; padding-left: 1rem; width: 100%; max-width: 43.52rem; line-height: 3.2rem; border: .1rem solid #d7d7d7; border-radius: .3rem;}
+.popup .item-inner .item-input.error{border-color: #f03;}
+.popup .item-inner .item-text{-webkit-box-shrink: 0; -webkit-flex-shrink: 0; flex-shrink: 0;}
+.popup li .tips{padding: .5rem; padding-left: 1rem; font-size: 1.2rem; line-height: 1.5; color: #f03;}
+.bind-phone > div:last-of-type{margin-top: 1.6rem;}
+/*绑定手机*/
+.bind-phone{min-width: 28rem;}
+.bind-phone input{padding-left: 1rem; width: 68vw; max-width: 43.52rem; line-height: 3.2rem; border: .1rem solid #d7d7d7; border-radius: .3rem;}
+.bind-phone .yzm{margin-left: 1rem; width: 24vw; min-width: 10rem; max-width: 15rem; line-height: 3.4rem; text-align: center; color: #fff; background-color: #f9cd02; border: 0; border-radius: .3rem;}
+.bind-phone .yzm.click{color: #a8a8a8; background-color: #eee;}
+.bind-phone .btn{font-size: 1.6rem;}
+/*warning*/
+.warning p{padding: 5vw; line-height: 2rem;}
+@media screen and (min-width: 640px){.warning p{padding: 5rem;}}
+/*~~~~~~ 企业套餐 end ~~~~~~*/
