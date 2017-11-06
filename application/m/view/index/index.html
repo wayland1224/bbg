@@ -952,17 +952,17 @@
 
 <script>
     var $bottomBar = $('#bottom-bar'),
-        $bottomName = $bottomBar.find('p');
+        $bottomName = $bottomBar.find('p'),$pathName = window.location.pathname;
     //判断在那一页
-    if (window.location.pathname == '/index') {
+    if ($pathName == '/index') {
         $bottomBar.find('a').eq(0).addClass('active').siblings().removeClass('active');
-    } else if (window.location.pathname == '/goods/sort') {
+    } else if ($pathName == '/goods/sort') {
         $bottomBar.find('a').eq(1).addClass('active').siblings().removeClass('active');
-    } else if (window.location.pathname == '/activity/group') {
+    } else if ($pathName == '/activity/group') {
         $bottomBar.find('a').eq(2).addClass('active').siblings().removeClass('active');
-    } else if (window.location.pathname == '/cart/index') {
+    } else if ($pathName == '/cart/index') {
         $bottomBar.find('a').eq(3).addClass('active').siblings().removeClass('active');
-    } else if (window.location.pathname == '/user/center') {
+    } else if ($pathName == '/user/center') {
         $bottomBar.find('a').eq(4).addClass('active').siblings().removeClass('active');
     }
     $.ajax({
@@ -1015,8 +1015,6 @@
             direction: "horizontal",
             pagination: ".swiper-pagination",
         });
-    })
-    $(function() {
         pushHistory();
         //阻止返回键
         window.addEventListener("popstate", function(e) {
