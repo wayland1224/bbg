@@ -11,13 +11,41 @@
 
 namespace think\cache;
 
+use think\Container;
+
 /**
  * 缓存基础类
  */
 abstract class Driver
 {
+    /**
+     * 驱动句柄
+     * @var object
+     */
     protected $handler = null;
+
+    /**
+     * 缓存读取次数
+     * @var integer
+     */
+    protected $readTimes = 0;
+
+    /**
+     * 缓存写入次数
+     * @var integer
+     */
+    protected $writeTimes = 0;
+
+    /**
+     * 缓存参数
+     * @var array
+     */
     protected $options = [];
+
+    /**
+     * 缓存标签
+     * @var string
+     */
     protected $tag;
 
     /**
@@ -101,6 +129,7 @@ abstract class Driver
     public function pull($name)
     {
         $result = $this->get($name, false);
+
         if ($result) {
             $this->rm($name);
             return $result;
@@ -129,14 +158,18 @@ abstract class Driver
             try {
                 // 锁定
                 $this->set($name . '_lock', true);
+
                 if ($value instanceof \Closure) {
-                    $value = call_user_func($value);
+                    // 获取缓存数据
+                    $value = Container::getInstance()->invokeFunction($value);
                 }
+
+                // 缓存数据
                 $this->set($name, $value, $expire);
+
                 // 解锁
                 $this->rm($name . '_lock');
             } catch (\Exception $e) {
-                // 解锁
                 $this->rm($name . '_lock');
                 throw $e;
             } catch (\throwable $e) {
@@ -146,6 +179,7 @@ abstract class Driver
         } else {
             $value = $this->get($name);
         }
+
         return $value;
     }
 
@@ -165,17 +199,22 @@ abstract class Driver
             $this->tag = $name;
         } else {
             $key = 'tag_' . md5($name);
+
             if (is_string($keys)) {
                 $keys = explode(',', $keys);
             }
+
             $keys = array_map([$this, 'getCacheKey'], $keys);
+
             if ($overlay) {
                 $value = $keys;
             } else {
                 $value = array_unique(array_merge($this->getTagItem($name), $keys));
             }
+
             $this->set($key, implode(',', $value), 0);
         }
+
         return $this;
     }
 
@@ -189,7 +228,9 @@ abstract class Driver
     {
         if ($this->tag) {
             $key       = 'tag_' . md5($this->tag);
+            $prev      = $this->tag;
             $this->tag = null;
+
             if ($this->has($key)) {
                 $value   = explode(',', $this->get($key));
                 $value[] = $name;
@@ -197,7 +238,9 @@ abstract class Driver
             } else {
                 $value = $name;
             }
+
             $this->set($key, $value, 0);
+            $this->tag = $prev;
         }
     }
 
@@ -211,6 +254,7 @@ abstract class Driver
     {
         $key   = 'tag_' . md5($tag);
         $value = $this->get($key);
+
         if ($value) {
             return array_filter(explode(',', $value));
         } else {
@@ -227,5 +271,15 @@ abstract class Driver
     public function handler()
     {
         return $this->handler;
+    }
+
+    public function getReadTimes()
+    {
+        return $this->readTimes;
+    }
+
+    public function getWriteTimes()
+    {
+        return $this->writeTimes;
     }
 }

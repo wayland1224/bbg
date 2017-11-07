@@ -14,47 +14,61 @@ namespace think;
 use think\exception\ValidateException;
 use traits\controller\Jump;
 
-Loader::import('controller/Jump', TRAIT_PATH, EXT);
-
 class Controller
 {
     use Jump;
 
     /**
-     * @var \think\View 视图类实例
+     * 视图类实例
+     * @var \think\View
      */
     protected $view;
+
     /**
-     * @var \think\Request Request实例
+     * Request实例
+     * @var \think\Request
      */
     protected $request;
-    // 验证失败是否抛出异常
+
+    /**
+     * 应用实例
+     * @var \think\App
+     */
+    protected $app;
+
+    /**
+     * 验证失败是否抛出异常
+     * @var bool
+     */
     protected $failException = false;
-    // 是否批量验证
+
+    /**
+     * 是否批量验证
+     * @var bool
+     */
     protected $batchValidate = false;
 
     /**
      * 前置操作方法列表
      * @var array $beforeActionList
-     * @access protected
      */
     protected $beforeActionList = [];
 
     /**
      * 构造方法
-     * @param Request $request Request对象
      * @access public
      */
-    public function __construct(Request $request = null)
+    public function __construct()
     {
-        if (is_null($request)) {
-            $request = Request::instance();
-        }
-        $this->view    = View::instance(Config::get('template'), Config::get('view_replace_str'));
-        $this->request = $request;
+        $this->request = Container::get('request');
+        $this->app     = Container::get('app');
+        $this->view    = Container::get('view')->init(
+            $this->app['config']->pull('template'),
+            $this->app['config']->get('view_replace_str')
+        );
 
         // 控制器初始化
-        $this->_initialize();
+        $this->initialize();
 
         // 前置操作方法
         if ($this->beforeActionList) {
@@ -67,9 +81,8 @@ class Controller
     }
 
     // 初始化
-    protected function _initialize()
-    {
-    }
+    protected function initialize()
+    {}
 
     /**
      * 前置操作
@@ -131,22 +144,26 @@ class Controller
      * @access protected
      * @param mixed $name  要显示的模板变量
      * @param mixed $value 变量的值
-     * @return void
+     * @return $this
      */
     protected function assign($name, $value = '')
     {
         $this->view->assign($name, $value);
+
+        return $this;
     }
 
     /**
      * 初始化模板引擎
      * @access protected
      * @param array|string $engine 引擎参数
-     * @return void
+     * @return $this
      */
     protected function engine($engine)
     {
         $this->view->engine($engine);
+
+        return $this;
     }
 
     /**
@@ -158,6 +175,7 @@ class Controller
     protected function validateFailException($fail = true)
     {
         $this->failException = $fail;
+
         return $this;
     }
 
@@ -175,18 +193,19 @@ class Controller
     protected function validate($data, $validate, $message = [], $batch = false, $callback = null)
     {
         if (is_array($validate)) {
-            $v = Loader::validate();
+            $v = $this->app->validate();
             $v->rule($validate);
         } else {
             if (strpos($validate, '.')) {
                 // 支持场景
                 list($validate, $scene) = explode('.', $validate);
             }
-            $v = Loader::validate($validate);
+            $v = $this->app->validate($validate);
             if (!empty($scene)) {
                 $v->scene($scene);
             }
         }
+
         // 是否批量验证
         if ($batch || $this->batchValidate) {
             $v->batch(true);

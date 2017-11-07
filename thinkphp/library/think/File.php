@@ -20,24 +20,53 @@ class File extends SplFileObject
      * @var string
      */
     private $error = '';
-    // 当前完整文件名
+
+    /**
+     * 当前完整文件名
+     * @var string
+     */
     protected $filename;
-    // 上传文件名
+
+    /**
+     * 上传文件名
+     * @var string
+     */
     protected $saveName;
-    // 文件上传命名规则
+
+    /**
+     * 上传文件命名规则
+     * @var string
+     */
     protected $rule = 'date';
-    // 文件上传验证规则
+
+    /**
+     * 上传文件验证规则
+     * @var array
+     */
     protected $validate = [];
-    // 单元测试
+
+    /**
+     * 是否单元测试
+     * @var bool
+     */
     protected $isTest;
-    // 上传文件信息
-    protected $info;
-    // 文件hash信息
+
+    /**
+     * 上传文件信息
+     * @var array
+     */
+    protected $info = [];
+
+    /**
+     * 文件hash规则
+     * @var array
+     */
     protected $hash = [];
 
     public function __construct($filename, $mode = 'r')
     {
         parent::__construct($filename, $mode);
+
         $this->filename = $this->getRealPath() ?: $this->getPathname();
     }
 
@@ -49,6 +78,7 @@ class File extends SplFileObject
     public function isTest($test = false)
     {
         $this->isTest = $test;
+
         return $this;
     }
 
@@ -60,6 +90,7 @@ class File extends SplFileObject
     public function setUploadInfo($info)
     {
         $this->info = $info;
+
         return $this;
     }
 
@@ -90,6 +121,7 @@ class File extends SplFileObject
     public function setSaveName($saveName)
     {
         $this->saveName = $saveName;
+
         return $this;
     }
 
@@ -103,6 +135,7 @@ class File extends SplFileObject
         if (!isset($this->hash[$type])) {
             $this->hash[$type] = hash_file($type, $this->filename);
         }
+
         return $this->hash[$type];
     }
 
@@ -132,6 +165,7 @@ class File extends SplFileObject
     public function getMime()
     {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
+
         return finfo_file($finfo, $this->filename);
     }
 
@@ -143,6 +177,7 @@ class File extends SplFileObject
     public function rule($rule)
     {
         $this->rule = $rule;
+
         return $this;
     }
 
@@ -154,6 +189,7 @@ class File extends SplFileObject
     public function validate($rule = [])
     {
         $this->validate = $rule;
+
         return $this;
     }
 
@@ -166,6 +202,7 @@ class File extends SplFileObject
         if ($this->isTest) {
             return is_file($this->filename);
         }
+
         return is_uploaded_file($this->filename);
     }
 
@@ -201,6 +238,7 @@ class File extends SplFileObject
             $this->error = 'illegal image files';
             return false;
         }
+
         return true;
     }
 
@@ -220,6 +258,7 @@ class File extends SplFileObject
         if (!in_array($extension, $ext)) {
             return false;
         }
+
         return true;
     }
 
@@ -235,6 +274,7 @@ class File extends SplFileObject
         if (in_array($extension, ['gif', 'jpg', 'jpeg', 'bmp', 'png', 'swf']) && !in_array($this->getImageType($this->filename), [1, 2, 3, 4, 6, 13])) {
             return false;
         }
+
         return true;
     }
 
@@ -263,6 +303,7 @@ class File extends SplFileObject
         if ($this->getSize() > $size) {
             return false;
         }
+
         return true;
     }
 
@@ -310,7 +351,7 @@ class File extends SplFileObject
             return false;
         }
 
-        $path = rtrim($path, DS) . DS;
+        $path = rtrim($path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
         // 文件保存命名规则
         $saveName = $this->buildSaveName($savename);
         $filename = $path . $saveName;
@@ -356,16 +397,16 @@ class File extends SplFileObject
             } else {
                 switch ($this->rule) {
                     case 'date':
-                        $savename = date('Ymd') . DS . md5(microtime(true));
+                        $savename = date('Ymd') . '/' . md5(microtime(true));
                         break;
                     default:
                         if (in_array($this->rule, hash_algos())) {
                             $hash     = $this->hash($this->rule);
-                            $savename = substr($hash, 0, 2) . DS . substr($hash, 2);
+                            $savename = substr($hash, 0, 2) . '/' . substr($hash, 2);
                         } elseif (is_callable($this->rule)) {
                             $savename = call_user_func($this->rule);
                         } else {
-                            $savename = date('Ymd') . DS . md5(microtime(true));
+                            $savename = date('Ymd') . '/' . md5(microtime(true));
                         }
                 }
             }
@@ -414,6 +455,8 @@ class File extends SplFileObject
      */
     public function getError()
     {
+        $lang = Container::get('lang');
+
         if (is_array($this->error)) {
             list($msg, $vars) = $this->error;
         } else {
@@ -421,7 +464,7 @@ class File extends SplFileObject
             $vars = [];
         }
 
-        return Lang::has($msg) ? Lang::get($msg, $vars) : $msg;
+        return $lang->has($msg) ? $lang->get($msg, $vars) : $msg;
     }
 
     public function __call($method, $args)

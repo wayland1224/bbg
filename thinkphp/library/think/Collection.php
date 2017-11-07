@@ -19,6 +19,10 @@ use JsonSerializable;
 
 class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSerializable
 {
+    /**
+     * 数据集数据
+     * @var array
+     */
     protected $items = [];
 
     public function __construct($items = [])
@@ -148,6 +152,21 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     }
 
     /**
+     * 在数组结尾插入一个元素
+     * @param mixed  $value
+     * @param mixed  $key
+     * @return void
+     */
+    public function push($value, $key = null)
+    {
+        if (is_null($key)) {
+            $this->items[] = $value;
+        } else {
+            $this->items[$key] = $value;
+        }
+    }
+
+    /**
      * 把一个数组分割为新的数组块.
      *
      * @param  int  $size
@@ -167,8 +186,8 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
 
     /**
      * 在数组开头插入一个元素
-     * @param mixed     $value
-     * @param miexed    $key
+     * @param mixed  $value
+     * @param mixed  $key
      * @return void
      */
     public function unshift($value, $key = null)
@@ -177,21 +196,6 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
             array_unshift($this->items, $value);
         } else {
             $this->items = [$key => $value] + $this->items;
-        }
-    }
-
-    /**
-     * 在数组结尾插入一个元素
-     * @param mixed  $value
-     * @param mixed  $key
-     * @return void
-     */
-    public function push($value, $key = null)
-    {
-        if (is_null($key)) {
-            $this->items[] = $value;
-        } else {
-            $this->items[$key] = $value;
         }
     }
 
@@ -205,6 +209,7 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
     {
         foreach ($this->items as $key => $item) {
             $result = $callback($item, $key);
+
             if (false === $result) {
                 break;
             } elseif (!is_object($item)) {
@@ -231,40 +236,13 @@ class Collection implements ArrayAccess, Countable, IteratorAggregate, JsonSeria
 
     /**
      * 返回数组中指定的一列
-     * @param      $column_key
-     * @param null $index_key
+     * @param mixed     $column_key
+     * @param mixed     $index_key
      * @return array
      */
     public function column($column_key, $index_key = null)
     {
-        if (function_exists('array_column')) {
-            return array_column($this->items, $column_key, $index_key);
-        }
-
-        $result = [];
-        foreach ($this->items as $row) {
-            $key    = $value    = null;
-            $keySet = $valueSet = false;
-            if (null !== $index_key && array_key_exists($index_key, $row)) {
-                $keySet = true;
-                $key    = (string) $row[$index_key];
-            }
-            if (null === $column_key) {
-                $valueSet = true;
-                $value    = $row;
-            } elseif (is_array($row) && array_key_exists($column_key, $row)) {
-                $valueSet = true;
-                $value    = $row[$column_key];
-            }
-            if ($valueSet) {
-                if ($keySet) {
-                    $result[$key] = $value;
-                } else {
-                    $result[] = $value;
-                }
-            }
-        }
-        return $result;
+        return array_column($this->items, $column_key, $index_key);
     }
 
     /**

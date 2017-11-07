@@ -1,14 +1,16 @@
 <?php
 namespace app\m\controller;
-use app\common\model\User;
+use app\common\model\UserModel;
 use think\Controller;
 
 class Index extends Controller
 {
     public function index()
     {
-        $userList = User::all();
-        dump($userList);exit;
+        $userList = UserModel::all();
+        foreach ($userList as $user) {
+            $info = $user->toArray();dump($info);exit;
+        }
         return $this->fetch();
     }
 }
