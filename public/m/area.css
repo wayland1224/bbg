@@ -1,0 +1,36 @@
+.area{overflow: hidden;text-align: center;padding:20px 0 15px 0;}
+.area i{display: inline-block;width:75px;height:14px;}
+.area  span{margin:0px 12px;font-size:14px;color:#333;}
+.area .area-ic-l{background: url(../img/area-tt1.png) 0 4px no-repeat;background-size: 75px auto;}
+.area .area-ic-r{background: url(../img/area-tt2.png) 0 4px no-repeat;background-size: 75px auto;}
+
+.area-list{width: 100%;overflow: hidden;box-sizing: border-box;background-color:white;}
+.area-list ul{display:block;white-space:nowrap;width: 100%;overflow: scroll;}
+.area-list ul::-webkit-scrollbar{display: none;}
+
+.area-list ul li{display: inline-block;font-size:12px;padding:9px 0px;width: 80px;margin-right:5px;text-align: center;}
+.area-list ul li img{display: inline-block;margin-right:5px;width:15px;height:15px;background-color:#eee;border-radius: 50%;}
+/*.area-list ul li:nth-child(1){padding-left:10px;box-sizing: border-box;}
+.area-list ul li:nth-last-child(1){padding-right:10px;box-sizing: border-box;}*/
+.area-list ul li span{display: inline-block;height:15px;line-height: 16px;vertical-align: middle;}
+.choise-atv{font-size:12px;color:#ffbe00;border-bottom:1px solid #ffbe00;}
+.chiose-area{margin-top:5px;}
+.area-selist{width: 80px;float:left;height:229px;overflow-y:scroll;}
+.area-selist::-webkit-scrollbar{display: none;}
+.area-selist li{height:34px;text-align: center;line-height: 34px;font-size:12px;color:#999;background-color:white;}
+.area-selist li + li{border-top:1px solid #e6e6e6;}
+.chiose-area{overflow: auto;margin-left:5px;padding:0px 5px;position: relative;}
+.chiose-area ul{background-color:white;height:229px;}
+.chiose-area ul li{float:left;width: 33.33%;margin-top:15px;}
+.chiose-area ul li a{display: block;text-align: center;}
+.chiose-area ul li img{width: 50px;height:50px;display:block;margin:0px auto 10px;object-fit: cover;border-radius: 3px;}
+.chiose-area span{font-size:12px;color:#333;}
+.chiose-area .more-food{position: absolute;width:100%;font-size:12px;text-align:center;left:0px;bottom: 20px;color:#ffbe00;}
+.area-cont{margin-bottom: 5px;}
+.area-atv{color:white !important;background-color:#ffbe00 !important;}
+
+
+
+[v-cloak] {
+  display: none;
+}

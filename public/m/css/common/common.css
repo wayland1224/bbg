@@ -128,8 +128,8 @@ html.cover-box,body.cover-box {width:100%;height:100%;overflow:hidden;}
 /*图片懒加载*/
 img.lazyload,img.lazyloading {width: 100%;opacity: 0.5;background: #f7f7f7 url(../../img/watermark-logo.png) no-repeat center;background-size: 6.4rem 6.4rem;}
 /*购物车数量*/
-#goods-cart-count{display: none;position: absolute; top: 0; margin-left: .4rem; width: 1.6rem; height: 1.6rem; line-height: 1.6rem; font-size: 1.1rem; background: #f00; border-radius: 50%; color: #fff; text-align: center;}
+#goods-cart-count{display: none;position: absolute; top: 0; margin-left: .4rem; width: 2.4rem; height: 1.4rem; line-height: 1.4rem; font-size: 1.1rem; background: #f00; border-radius: 0.7rem; color: #fff; text-align: center;}
 #goods-cart-count.show{display: block;}
-#goods-cart-count.more{line-height: 1rem;}
+#goods-cart-count.more{line-height: 1.4rem;}
 /*限时抢购标记*/
 .flash-sale-icon:before{content: '';position: absolute;z-index: 1;width: 4.5rem;height: 4.7rem;background: url(../../img/icon-flash-sale.png) no-repeat right bottom;-webkit-background-size: 4.5rem 4.7rem;background-size: 4.5rem 4.7rem;}

@@ -130,9 +130,11 @@ function changeGoodsCartNum() {
         var num = res.map.buyCount;
         console.log('getGoodsCartCount:' + num);
         if (!num) return;
-        if (num > 99) {
-          num = '...';
+        if (num > 999) {
+          num = '1...';
           goodsCartCount.addClass('more');
+        }else{
+          goodsCartCount.removeClass('more');
         }
         goodsCartCount.html(num);
         goodsCartCount.show();

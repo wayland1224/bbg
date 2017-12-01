@@ -22,7 +22,7 @@ $(function() {
       window.location.href = "/cart/index?template=" + template;
     });
 });
-
+ 
 // 商品列表点击加入购物车
 function goodsListAddToCart(obj) {
   var numBuy = 1,
@@ -117,3 +117,4 @@ function AddGoodsToCartResult2(goodsUrl, data) {
     addCartLoading = false;
   }, 400);
 }
+
