@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="cover-box">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>确认支付</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" href="/m/css/pay.css?v=201703301200">
+  <script>
+    if (sessionStorage.fromPayToPersonal == 1) {
+      //再次从待付款返回则跳转个人中心
+      sessionStorage.fromPayToPersonal = 2;
+      document.title = '个人中心';
+      location.href = '/user/center?template=bbgmall';
+    } else if (sessionStorage.fromPayToPersonal == 2) {
+      //再次从个人中心返回则跳转首页
+      sessionStorage.removeItem('fromPayToPersonal');
+      document.title = '个人中心';
+      location.href = '/index?template=bbgmall';
+    }
+  </script>
+  <style>
+    body{opacity: 0;}
+    .yuan{margin-right: 2px;}
+  </style>
+  <script src="/m/js/pay/pay.js?v=201706271022"></script>
+</head>
+
+<body class="f1 cover-box">
+<!-- 隐藏域 -->
+<div>
+  <input type="hidden" id="wechat_appId" value="5"/>
+  <input type="hidden" id="userId" value="19591"/>
+  <input type="hidden" id="template" value="bbgmall"/>
+  <input type="hidden" id="openid" value="oUowCs9GsrF_0-PsdCBGcdOiHYbE"/>
+  <input type="hidden" id="appId" value="5"/>
+  <input type="hidden" id="totalFee" name="totalFee" value="58"/>
+  <input type="hidden" id="giftCardPrice" name="giftCardPrice" value="0"/>
+  <input type="hidden" id="couponPrice" name="couponPrice" value="0"/>
+  <input type="hidden" id="useGreeniconPrice" name="useGreeniconPrice" value="0"/>
+  <input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+
+  <input type="hidden" id="rechargeCardPrice" name="rechargeCardPrice" value="0"/>
+  <input type="hidden" id="giftCardNo" name="giftCardNo" value=""/>
+  <input type="hidden" id="rechargeCardNo" name="rechargeCardNo" value=""/>
+  <input type="hidden" id="couponId" name="couponId" value="0"/>
+
+  <input type="hidden" id="notifyUrl" name="notifyUrl" value="http://mall.wb1688.com/pay/weixin/notify"/>
+    <input type="hidden" id="serialNumber" name="serialNumber" value="201712033475"/>
+  <input type="hidden" id="body" name="body" value="201712033475"/>
+</div>
+
+<!--content-->
+<header>
+  <img src="/m/img/icon-pay-success1.png">
+  <p>确认支付</p>
+</header>
+
+<div class="pay_list">
+  <ul class="border-v">
+    <li class="border-h">
+      <span>流水号：</span>
+      <span>201712033475</span>
+    </li>
+
+    <li class="border-bottom border-h">
+      <span>微信支付金额：</span>
+      <span class="red toFixed">58.00</span>
+    </li>
+
+
+
+
+
+
+  </ul>
+</div>
+
+<div class="pay_tips">
+  <p>温馨提示：</p>
+  <p>如果您在支付过程遇到问题,请联系客服：</p>
+  <p>
+    <a href="tel:0755-25281116">总机：0755-25281116</a>
+    <span>或</span>
+    <a href="tel:18938965106">手机：18938965106</a>
+  </p>
+</div>
+
+<footer id="payBtn">确认支付</footer>
+
+<script>
+  if (!sessionStorage.fromPayToPersonal) $('body').css('opacity', 1);
+  $(function () {
+    // 阻止返回按钮事件
+    pushHistory();
+    var bool = false;
+    setTimeout(function () {
+      bool = true;
+    }, 1500);
+    window.addEventListener("popstate", function (e) {
+      var template = $('#template').val();
+      if (bool) {
+        sessionStorage.fromPayToPersonal = 1;
+        location.href = '/order/findFrontOrders?orderStatus=1&begType=1&template=' + template;
+      }
+      pushHistory();
+    }, false);
+  });
+
+/* 	//价格保留两位小数
+	var toFixedPrices = $('.toFixed'),
+	    tmpText = '';
+	for (var i = 0; i < toFixedPrices.length; i++) {
+	  tmpText = '<em class="yuan">&#165;</em>' + parseFloat($('.toFixed').eq(i).html()).toFixed(2);
+	  $('.toFixed').eq(i).html(tmpText);
+	} */
+
+	function pushHistory() {
+	  var state = {
+	    title: 'title',
+	    url: '#'
+	  };
+	  window.history.pushState(state, 'title', '#');
+	}
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

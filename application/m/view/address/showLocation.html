@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+	<title>新增地址</title>
+<link rel="stylesheet" type="text/css" href="/resources/red/css/style.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/page.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/cloud.css?v=201612311426">
+<script type="text/javascript" src="/resources/js/jquery.js?v=201612311426"></script>
+<script type="text/javascript" src="/resources/js/common.js?v=201706201140"></script>
+<!--<script type="text/javascript" src="/resources/js/main.js?v=201612291707"></script>-->
+	<style>
+	.city_list select { margin:5px 0}
+	.add-address-btn {margin: 60px 15px 0;min-width: 290px;font: 16px/48px "";text-align: center;letter-spacing: .1rem;color: #fff;background: #f9cd02;border-radius: .4rem;}
+
+	</style>
+	<script src="/wechat/js/address/address.js?v=201710201100"></script>
+</head>
+
+<body>
+
+<div class="box">
+	<ul>
+		<li>
+			<p class="box_l">收货人姓名：</p>
+			<p class="box_m"><input type="text" id="name" value=""><br/><span id="namediv"></span></p>
+		</li>
+		<li>
+			<p class="box_l">联系电话：</p>
+			<p class="box_m"><input type="text" id="mobile" value=""><br/><span id="mobilediv"></span></p>
+			<input type="hidden" id="address_id" value="">
+		</li>
+		<li>
+			<p class="box_l">所在区域：</p>
+			<p class="box_m">
+			<select id="provinces" name="province" onchange="loadCity();" onblur="checkProvince()">
+	          		 <option  value="0">请选择省</option>
+								<option  value="1">北京市</option>
+								<option  value="19">天津市</option>
+								<option  value="37">河北省</option>
+								<option  value="209">山西省</option>
+								<option  value="328">内蒙古自治区</option>
+								<option  value="429">辽宁省</option>
+								<option  value="529">吉林省</option>
+								<option  value="589">黑龙江省</option>
+								<option  value="719">上海市</option>
+								<option  value="738">江苏省</option>
+								<option  value="844">浙江省</option>
+								<option  value="934">安徽省</option>
+								<option  value="1039">福建省</option>
+								<option  value="1124">江西省</option>
+								<option  value="1223">山东省</option>
+								<option  value="1363">河南省</option>
+								<option  value="1523">湖北省</option>
+								<option  value="1625">湖南省</option>
+								<option  value="1747">广东省</option>
+								<option  value="1870">广西壮族自治区</option>
+								<option  value="1979">海南省</option>
+								<option  value="2002">重庆市</option>
+								<option  value="2042">四川省</option>
+								<option  value="2223">贵州省</option>
+								<option  value="2311">云南省</option>
+								<option  value="2440">西藏自治区</option>
+								<option  value="2513">陕西省</option>
+								<option  value="2620">甘肃省</option>
+								<option  value="2707">青海省</option>
+								<option  value="2750">宁夏回族自治区</option>
+								<option  value="2771">新疆维吾尔自治区</option>
+								<option  value="2870">香港特别行政区</option>
+								<option  value="2871">澳门特别行政区</option>
+								<option  value="2872">台湾省</option>
+			</select>
+		 <!-- 市 -->
+	       <span class="city_list">
+	         <select id="seachcity" onblur="checkCity()" onchange="loadDistrict();">
+	         	<option  value="0">请选择市</option>
+	         </select>
+	       </span>
+	    <!-- 区 -->
+			<span class="district_list">
+				<select id="seachdistrict" onblur="checkDistrict()">
+					<option  value="0">请选择区</option>
+	         </select>
+			</span>
+			<span id="addressDiv"></span>
+		</li>
+		<li>
+			<p class="box_l">详细地址：</p>
+			<p class="box_m"><input type="text" id="address" value="" ><br/><span id="addressDetailDiv"></span></p>
+		</li>
+	</ul>
+</div>
+
+	<footer class="add-address-btn bottom-fix" onclick="save()">保存并使用</footer>
+
+<!--<div class="copyright2">版权所有 &copy; 网邦信息技术提供技术支持</div>-->
+
+<!--隐藏域-->
+<div>
+  <input type="hidden" value="bbgmall" id ="template"/>
+  <input type="hidden" id="source" value="1"/>
+  <input type="hidden" id="cardId" value=""/>
+  <input type="hidden" id="lotteryWinningId" value=""/>
+</div>
+
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

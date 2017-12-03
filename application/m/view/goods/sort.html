@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>分类首页</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/sort.css?v=201709071100">
+</head>
+
+<body class="bg-fa">
+<!-- 隐藏域 -->
+<div>
+<input type="hidden" id="title" value="分类首页"/>
+<input type="hidden" id="imgUrl" value="http://image.wb1688.com/1483253569986.jpg"/>
+<input type="hidden" id="link" value="http://mall.wb1688.com/goods/sort?user_id=19591&template=bbgmall"/>
+<input type="hidden" id="appId" value="5"/>
+<input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+<input type="hidden" value="bbgmall" id ="template"/>
+<input type="hidden" id="source" value="sort"/>
+</div>
+
+<!-- content -->
+<div class="content has-foot">
+<!--search START-->
+<header>
+  <div class="search p-rel">
+    <input class="search-txt" type="search" placeholder="搜索商品">
+    <button class="search-btn p-abs"></button>
+  </div>
+</header>
+<!--search END-->
+
+<!--sort-list START-->
+<div class="sort-list">
+  <ul class="font0">
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=新鲜水果&cateId=1003&mainPic=http://wb1688.qiniudn.com/1483253572065.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483253569986.jpg">
+            <h2>新鲜水果</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=安心蔬菜&cateId=1006&mainPic=http://wb1688.qiniudn.com/1483253810759.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483253807202.jpg">
+            <h2>安心蔬菜</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=粮油副食&cateId=1012&mainPic=http://wb1688.qiniudn.com/1483253932862.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483253928954.jpg">
+            <h2>粮油副食</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=肉禽蛋品&cateId=1009&mainPic=http://wb1688.qiniudn.com/1483253880654.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483253867002.jpg">
+            <h2>肉禽蛋品</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=安心零食&cateId=1015&mainPic=http://wb1688.qiniudn.com/1483253979114.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483253974536.jpg">
+            <h2>安心零食</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=山珍海味&cateId=1024&mainPic=http://wb1688.qiniudn.com/1493265236186.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1493265230906.jpg">
+            <h2>山珍海味</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=茶饮 · 冲调 · 酒&cateId=1018&mainPic=http://wb1688.qiniudn.com/1483254177543.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483254175761.jpg">
+            <h2>茶饮 · 冲调 · 酒</h2>
+          </a>
+        </li>
+        <li class="item" >
+          <a class="flex" href="/goods/search?sortTitle=礼品 · 礼品卡&cateId=1021&mainPic=http://wb1688.qiniudn.com/1483255663738.jpg&source=sort&template=bbgmall">
+            <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483255661399.jpg">
+            <h2>礼品 · 礼品卡</h2>
+          </a>
+        </li>
+  </ul>
+</div>
+<!--sort-list END-->
+</div>
+
+<!--底部选项卡-->
+<footer class="bottom-fix flex bottom-tab " id="bottom-bar">
+    <a class="cell bottom-item" href="/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">首页</p>
+    </a>
+    <a class="cell bottom-item" href="/goods/sort?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">分类</p>
+    </a>
+    <!--<a class="cell bottom-item" href="/activity/group?template=bbgmall">-->
+        <!--<span class="bottom-icon"></span>-->
+        <!--<p class="bottom-name">团购</p>-->
+    <!--</a>-->
+    <a class="cell bottom-item" href="/cart/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <i class="" id="goods-cart-count"></i>
+        <p class="bottom-name">购物车</p>
+    </a>
+    <a class="cell bottom-item" href="/user/center?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">我的</p>
+    </a>
+</footer>
+
+<script>
+    var $bottomBar = $('#bottom-bar'),
+        $bottomName = $bottomBar.find('p');
+    //判断在那一页
+    if (window.location.pathname == '/index') {
+        $bottomBar.find('a').eq(0).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/goods/sort') {
+        $bottomBar.find('a').eq(1).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/activity/group') {
+        $bottomBar.find('a').eq(2).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/cart/index') {
+        $bottomBar.find('a').eq(3).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/user/center') {
+        $bottomBar.find('a').eq(4).addClass('active').siblings().removeClass('active');
+    }
+    $.ajax({
+        url: '/bottomBar',
+        type: 'get',
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            if (res.code == 0 && typeof res.obj == 'object') {
+                var data = res.obj;
+                var aColor = data.color.split(',');
+                var name = data.name.split(',');
+                var cssText = '.bottom-tab{opacity: 1;}'
+                            + '.bottom-item .bottom-icon{background-image: url(' + data.normalSizeIcon + ');}'
+                            + '.bottom-item{color: ' + aColor[0] + ';}'
+                            + '.bottom-item.active{color: ' + aColor[1] + ';}';
+                loadStyleString(cssText);
+                for (var i = 0; i < name.length; i++) {
+                    $bottomName.eq(i).html(name[i]);
+                }
+            } else {
+                loadStyleString('.bottom-tab{opacity: 1;}');
+                console.log(res.message);
+            }
+        },
+        error: function(res) {
+            loadStyleString('.bottom-tab{opacity: 1;}');
+            console.log(res.responseText);
+        }
+    });
+</script>
+
+<!--返回顶部-->
+<div class="backToTop"><img src="/m/img/icon-top.png"></div>
+
+<script src="/m/js/share/initShare.js?v=201706291059"></script>
+<script src="/m/libs/lazysizes.min.js?v=4"></script>
+<script src="/m/js/sort.js?v=201705271800"></script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

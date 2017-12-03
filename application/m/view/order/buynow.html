@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>确认订单</title>
+  <script>
+    //再次从个人中心返回则跳转首页
+    if (sessionStorage.fromOrderSuccessToPersonal) sessionStorage.removeItem('fromOrderSuccessToPersonal');
+  </script>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/order-settlement.css?v=1.01">
+  <script src="/m/js/order/myorder.js?v=20170519000"></script>
+</head>
+
+<body class="bg-ee">
+
+<form name="oform" action="" method="post" onSubmit="return checkSubmit();">
+  <!--收件人信息 start-->
+    <a href="javascript:gotoChooseAddress(4645);">
+      <div class="consignee-info " >
+        <span class="icon p-abs icon-address"></span>
+        <div class="empty-info">收货地址：请添加您的收货人信息</div>
+        <section class="">
+            <div class="address-title clear">
+                <span class="consignee fl-l">收货人：<span>陈文龙</span></span>
+                <span class="consignee-tel fl-r">13328758725</span>
+            </div>
+            <div class="address-info">收货地址：<span>福建省厦门市思明区望海路779号</span></div>
+            <aside class="icon-select"></aside>
+        </section>
+      </div>
+    </a>
+  <!--收件人信息 end-->
+
+  <!--订单信息 start-->
+  <div class="order-list">
+    <ul class="shop-list">
+        <div class="storeId">
+          <li class="shop-info">
+            <!--店铺名称-->
+            <h2>怀化冰糖橙果园</h2>
+                  <div class="logisticsList">
+                    <!--商品列表-->
+                <ul class="goods-list">
+                  <li class="goods-info">
+                      <!--单件商品图文-->
+                      <section>
+                        <img src="http://image.wb1688.com/1510813190085.jpg?imageView2/1/w/192/h/192">
+                        <h4 class="line-clamp">湖南怀化洪江冰糖橙子</h4>
+                        <p class="ellipsis">
+                             规格：8斤精选大果
+                        </p>
+                        <div class="goods-price p-rel clear">
+                          <span class="goods-unit-price price fl-l"><em class="yuan">&#165;</em><strong>58</strong>.00</span>
+                          <span class="goods-num fl-r clear">
+                              <button class="minus numReduce" index="0:0:0" var="14356:14348:3217:10152:">-</button>
+                              <input type="text" value="1" class="numBuy" readonly>
+                              <button class="add numAdd" index="0:0:0" var="14356:14348:3217:10152:">+</button>
+                          </span>
+                        </div>
+                      </section>
+
+                      <!--隐藏信息-->
+                      <div class="selectNum2">
+                        <input type="hidden" class="quantity" value="1329"/>
+                        <input type="hidden" class="group_buy_price" value="58"/>
+                        <input type="hidden" class="postage" value="0"/>
+                        <input type="hidden" class="postageTotal" value="0"/>
+                      </div>
+
+                  </li>
+                </ul>
+              </div>
+
+            <dl class="distribution order-info clear">
+              <dd class="total-price clear">
+                <span>商品金额</span>
+                <span class="fl-r goodsPrice"><em class="yuan">&#165;</em>0.00</span>
+              </dd>
+                <input type="hidden" class="postageLogisticsId" value="653"/>
+                <dd class="clear transport" index="0:0" var="653">
+                  <span>配送方式</span>
+                  <span class="icon icon-select"></span>
+                  <span class="text">EMS</span>
+                </dd>
+              <dd class="clear">运费
+                <span class="fl-r goodsPostage">
+                  <del><em class="yuan"></em></del><em class="yuan">&#165;</em><span>0.00</span>
+                </span>
+              </dd>
+              <dd class="leave-mes clear flex-container">
+                <span>买家留言：</span>
+                <input class="col-1 buyerMessage" type="text" placeholder="选填：可填写您和卖家达成一致的要求"/>
+              </dd>
+            </dl>
+          </li>
+        </div>
+    </ul>
+  </div>
+  <!--订单信息 end-->
+
+  <!--优惠 单选 start-->
+  <dl class="preferential">
+    <!-- 礼品卡 -->
+    <dd class="gift-card" id="gift-card">
+      <span>礼品卡</span>
+      <span class="tips"></span>
+      <label class="multi-switch fl-r">
+        <input type="checkbox" class="bigswitch"/>
+        <span class="switch-content">
+          <i class="switch-circle"></i>
+        </span>
+      </label>
+    </dd>
+    <div class="gift-select" >
+      <ul>
+        <!--active已激活，select选中-->
+        <!--添加礼品卡-->
+        <li class="add-gift"></li>
+      </ul>
+    </div>
+    <!-- 优惠券 -->
+    <dd class="coupon" id="coupon">
+      <span>优惠券</span>
+      <span class="tips">0张可用</span>
+      <label class="multi-switch fl-r">
+        <input type="checkbox" class="bigswitch">
+        <span class="switch-content">
+          <i class="switch-circle"></i>
+        </span>
+      </label>
+    </dd>
+    <div class="coupon-select">
+      <ul>
+      </ul>
+    </div>
+    <!-- 充值卡 -->
+    <dd class="recharge" id="recharge">
+      <span>充值卡</span>
+      <span class="tips"></span>
+      <label class="multi-switch fl-r">
+        <input type="checkbox" class="bigswitch"/>
+        <span class="switch-content">
+          <i class="switch-circle"></i>
+        </span>
+      </label>
+    </dd>
+    <div class="recharge-select" id="recharge-select">
+    </div>
+    <!-- 绿币抵扣 -->
+    <dd class="greencoin" id="greencoin" data-balance="0">
+        <span>无可用绿币</span>
+      <i class="greencoin-tip"></i>
+      <label class="multi-switch fl-r">
+        <input type="checkbox" class="bigswitch"/>
+        <span class="switch-content">
+          <i class="switch-circle"></i>
+        </span>
+      </label>
+    </dd>
+  </dl>
+  <!--优惠 单选 end-->
+
+  <!--提交订单-->
+  <div class="order-submit p-fix">
+    <span class="submit-btn" onclick="formSubmit();" disabled="disabled">提交订单</span>
+    <span class="total-price">合计: <span class="price"><em class="yuan">&#165;</em><strong>58</strong>.00</span></span>
+  </div>
+
+  <!--配送方式弹窗-->
+    <div class="storeList" style="display:none;">
+        <div class="transport-pop p-fix">
+          <p class="title">配送方式</p>
+          <dl class="border-v">
+                <dd name="chk_653">EMS<span class="icon select" var="653"></span></dd>
+          </dl>
+          <p class="theme-bg confirm-btn">确定</p>
+        </div>
+    </div>
+
+  <!--礼品卡弹窗-->
+  <div class="bind-card pop">
+    <div class="title">添加礼品卡</div>
+    <input type="text" id="cardNo" name="cardNo" autocomplete="off" placeholder="请输入礼品卡卡号" />
+    <input type="password" id="cardPassword" name="cardPassword" autocomplete="new-password" placeholder="请输入密码" />
+    <div class="flex border-top">
+      <span class="cell btn border-center cancelPop">取消</span>
+      <span class="cell btn" id="addGiftCard">确定</span>
+    </div>
+  </div>
+
+  <!-- 隐藏域 -->
+  <div>
+    <input name="pay_style" id="pay_style" type="hidden" value="1"/><!--1:线上支付，2:货到付款-->
+    <input name="takeType" id="takeType" type="hidden" value="1"/><!--1:卖家自提，2:物流配送-->
+    <input name="receiveName" id="receiveName" type="hidden" value="陈文龙"/>
+    <input name="receiveProvince" id="receiveProvince" type="hidden" value="福建省"/>
+    <input name="receiveCity" id="receiveCity" type="hidden" value="厦门市"/>
+    <input name="receiveArea" id="receiveArea" type="hidden" value="思明区"/>
+    <input name="receiveAddress" id="receiveAddress" type="hidden" value="福建省厦门市思明区望海路779号"/>
+    <input name="receiveMobile" id="receiveMobile" type="hidden" value="13328758725"/>
+    <input name="totalPrice" id="totalPrice" type="hidden" value="58"/>
+    <input name="buyerMessage" id="buyerMessage" type="hidden" value=""/>
+    <input type="hidden" name="template" value="bbgmall" id ="template"/>
+    <input type="hidden" name="source" value="1" id ="source"/>
+    <input type="hidden" id="hidIndex" value=""/>
+    <input type="hidden" id="hidError" value=""/>
+    <input type="hidden" id="hidParams" value=""/>
+    <input type="hidden" id="submitCheck" value="0"/>
+    <input type="hidden" id="addressId" value="4645"/>
+    <input type="hidden" id="popStatus" value="0"/>
+    <!-- 礼品卡 -->
+    <input name="whetherGroupBuy" id="whetherGroupBuy" type="hidden" value="0"/>
+    <input name="cardId" id="cardId" type="hidden" value=""/>
+    <input type="hidden" id="tempCardId" value=""/>
+    <input name="cardName" id="cardName" type="hidden" value=""/>
+    <input type="hidden" id="tempCardName" value=""/>
+    <!-- 优惠券 -->
+    <input name="couponId" id="couponId" type="hidden" value=""/>
+    <input type="hidden" id="tempCouponId" value=""/>
+    <!-- 充值卡 -->
+    <input type="hidden" name="rechargeCardId" id="rechargeCardId" value="">
+    <input type="hidden" name="rechargeCardStatus" id="rechargeCardStatus" value="">
+    <!-- 绿币 -->
+    <input type="hidden" name="useGreenicon" id="useGreenicon" value="false">
+    <input type="hidden" id="pay1" value="1" />
+    <input type="hidden" id="pay2" value="0" />
+    <input type="hidden" id="delivery1" value="0" />
+    <input type="hidden" id="delivery2" value="1" />
+  </div>
+</form>
+
+<!-- 弹窗 START -->
+<div class="cover" id="cover"></div>
+
+<!--提示弹窗-->
+<div class="warning pop" id="warning">
+  <p class="messageInfo warn-tip">此卡暂时不能使用，请核对使用时间及卡内余额。</p>
+  <div class="btn border-top hidePop">确定</div>
+</div>
+<!-- 充值卡弹窗 -->
+<div class="recharge-warning pop">
+  <img src="/m/img/icon-recharge-pop.png">
+    <p>暂无可用充值卡~</p>
+    <p>请前往"个人中心"-"我的钱包"开通</p>
+  <div class="btn border-top hidePop">确定</div>
+</div>
+<!-- 绿币规则弹窗 -->
+<div class="pop greencoin-pop" id="greencoin-pop">
+  <span class="icon icon-remove-red hidePop"></span>
+  <div class="img-box"><img class="greencoin-rule" src="http://image.wb1688.com/1511773855486.png"></div>
+</div>
+<!-- 弹窗 END -->
+
+<script>
+  //变量声明
+  var whetherGroupBuy = $('#whetherGroupBuy').val(),
+    preferential = $('.preferential'),
+    giftCard = $('#gift-card'),
+    couponCard = $('#coupon'),
+    rechargeCard = $('#recharge'),
+    oGreenCoin = $('#greencoin'),
+    giftCardTips = giftCard.children('.tips'),
+    couponCardTips = couponCard.children('.tips'),
+    rechargeCardTips = rechargeCard.children('.tips'),
+    rechargeCardId = $('#rechargeCardId').val(),
+    oUseGreenicon = $('#useGreenicon'),
+    oCover = $('#cover'),
+    oWarning = $('#warning'),
+    oWarnTips = oWarning.find('.warn-tip');
+
+  //优惠模块
+  var PreferentialModule = {
+    //未选择该优惠
+    unSelected: function(idx) {
+      var ddObj = $(idx).parents('dd');
+      preferential.removeClass('choice');
+      ddObj.removeClass('select');
+      //js覆盖css 兼容iOS
+      if (isIPhone) ddObj.next().hide();
+
+      if (ddObj.hasClass('gift-card')) {
+        if ($("#cardId").val() != "") {
+          $("#tempCardId").val($("#cardId").val());
+          $("#tempCardName").val(giftCardTips.text());
+          $("#cardId").val("");
+          if (whetherGroupBuy == 1) {
+            giftCardTips.html('该商品不能使用礼品卡');
+            $('.gift-card input').prop('disabled', true);
+            $('.gift-select li').removeClass('select');
+            $(".gift-select li.add-gift").hide();
+            $(".gift-select").show();
+          } else {
+            giftCardTips.html('请选择一张有效的礼品卡！');
+          }
+        }
+      } else if (ddObj.hasClass('coupon')) {
+        $("#tempCouponId").val(couponId);
+        $("#couponId").val("");
+      } else if (ddObj.hasClass('greencoin')) {
+        oUseGreenicon.val('false');
+      }
+    },
+    //选中某一优惠
+    choice: function(idx) {
+      preferential.addClass('choice');
+      this.select(idx);
+      this.IOSSwitch(idx);
+    },
+    //被选中的优惠
+    select: function(idx) {
+      var ddObj = $(idx).parents('dd');
+      ddObj.addClass('select')
+        .siblings().removeClass('select');
+      ddObj.find('input').prop('checked', true);
+      ddObj.next().show();
+      //js覆盖css 兼容iOS
+      if (isIPhone) {
+        $('.preferential > div').hide();
+        ddObj.next().css({
+          'display': 'block'
+        });
+      }
+
+      //如果选中了礼品卡
+      if (ddObj.hasClass('gift-card')) {
+        $("#cardId").val($("#tempCardId").val());
+
+        if ($("#tempCardName").val() == "") {
+          ddObj.find("span:eq(1)").text("请选择一张有效的礼品卡！");
+        } else {
+          ddObj.find("span:eq(1)").text($("#tempCardName").val());
+        }
+
+        var cardId = $("#cardId").val();
+        if (cardId != "") {
+          ddObj.find('.multi-switch').click();
+          $('.preferential .gift-card .tips').text($("#cardName").val());
+
+          for (var i = 0; i < $(".gift-select:eq(0) .card-item").length; i++) {
+            if (cardId == $(".gift-select:eq(0) .card-item:eq(" + i + ") input[type=hidden]:eq(0)").val()) {
+              $(".gift-select:eq(0) .card-item:eq(" + i + ")").click();
+            }
+          }
+        }
+
+        //清除优惠券选中状态
+        if ($("#couponId").val() != "") {
+          $("#tempCouponId").val($("#couponId").val());
+          $("#couponId").val("");
+        }
+      }
+      //如果选中了优惠券
+      else if (ddObj.hasClass('coupon')) {
+        $("#couponId").val($("#tempCouponId").val());
+
+        var couponId = $("#couponId").val();
+        if (couponId != "") {
+          ddObj.find('.multi-switch').click();
+          for (var i = 0; i < $(".coupon-select:eq(0) .coupon-item").length; i++) {
+            if (couponId == $(".coupon-select:eq(0) .coupon-item:eq(" + i + ") input[type=hidden]:eq(0)").val()) {
+              $(".coupon-select:eq(0) .coupon-item:eq(" + i + ")").click();
+            }
+          }
+        }
+
+        //清除礼品卡选中状态
+        if ($("#cardId").val() != "") {
+          $("#tempCardId").val($("#cardId").val());
+          if (typeof(whetherGroupBuy) != "undefined" && whetherGroupBuy == 1) {
+            $(".gift-card .tips").html('该商品不能使用礼品卡');
+          } else {
+            $(".gift-card .tips").html('请选择一张有效的礼品卡！');
+          }
+          $("#cardId").val("");
+        }
+      }
+      //如果选中了充值卡
+      else if (ddObj.hasClass('recharge')) {
+        //清除礼品卡选中状态
+        if ($("#cardId").val() != "") {
+          $("#tempCardId").val($("#cardId").val());
+          if (whetherGroupBuy == 1) {
+            giftCardTips.html('该商品不能使用礼品卡');
+          } else {
+            giftCardTips.html('请选择一张有效的礼品卡！');
+          }
+          $("#cardId").val("");
+        }
+
+        //点击充值卡开关，如果没有充值卡或充值卡冻结，弹窗
+        if (!$('#recharge-select li').length || $('#recharge-select li.frozen').length) {
+          oCover.show();
+          $('.recharge-warning').show();
+          rechargeCardTips.html($('.recharge-warning p:first').html());
+          idx.prop('disabled', true);
+          return;
+        }
+        rechargeCardTips.html($('#recharge-select li p').eq(1).html());
+      }
+      //如果选中了绿币
+      else if (ddObj.hasClass('greencoin')) {
+        //清除礼品卡选中状态
+        if ($("#cardId").val() != "") {
+          $("#tempCardId").val($("#cardId").val());
+          if (typeof(whetherGroupBuy) != "undefined" && whetherGroupBuy == 1) {
+            $(".gift-card .tips").html('该商品不能使用礼品卡');
+          } else {
+            $(".gift-card .tips").html('请选择一张有效的礼品卡！');
+          }
+          $("#cardId").val("");
+        }
+
+        //如果绿币为零
+        oUseGreenicon.val('true');
+      }
+    },
+    //仿IOS开关
+    IOSSwitch: function(idx) {
+      preferential.find('input').prop('checked', false);
+      $(idx).prop('checked', true);
+    },
+    //检测switch是否被选中
+    switchChecked: function(idx) {
+      if (whetherGroupBuy == 1) giftCard.find('input').prop('disabled', true).prop('checked', false);
+
+      if (idx.prop('checked')) {
+        //选中状态
+        this.choice(idx);
+      } else {
+        //未选择状态
+        this.unSelected(idx);
+      }
+    }
+  };
+
+  $(function() {
+
+    var error = $("#hidError").val();
+    if (error != "" && error != "undefined") {
+      var index = 0;
+      $(".logisticsList").each(function() {
+        $('.goodsPostage').eq(index).html("<del></del><em class=\"yuan\">&#165;</em><span>0.00</span>");
+        index++;
+      });
+
+      alert(error);
+      return;
+    }
+
+    //计算店铺总运费
+    calcStorePostage();
+
+    //不能使用礼品卡
+    if (whetherGroupBuy == 1) {
+      giftCardTips.html('该商品不能使用礼品卡');
+      $('.gift-card input').prop('disabled', true);
+      $("#cardId").val("");
+      $(".gift-select li.add-gift").hide();
+      $(".gift-select").show();
+    }
+
+    //不能使用绿币
+    if (oGreenCoin.attr('data-balance') == '0') {
+      oGreenCoin.find('input').prop('checked', true);
+      oUseGreenicon.val('false');
+    }
+
+    //提交订单可用
+    $(".submit-btn").attr("disabled", false);
+
+    //用户选择优惠
+    $('.preferential .multi-switch').on('change', 'input', function() {
+      if ($(this).prop('disable')) {
+        return alert('不可选中');
+      }
+      PreferentialModule.switchChecked($(this));
+    });
+
+    //选中礼品卡
+    $('.gift-select').on('click', 'li.card-item', function() {
+      if (whetherGroupBuy == 1) return $('.gift-select li').removeClass('select');
+      //选中的li居中
+      var idx = $(this).index(),
+        len = $('.gift-select li.card-item').length,
+        scrollLeft = 0,
+        move = (screen.width - $(this).outerWidth()) / 2;
+
+      if (idx) {
+        if (idx == len) {
+          $('.gift-select .add-gift').css({
+            'width': '10rem'
+          });
+        } else {
+          $('.gift-select .add-gift').css({
+            'width': '5rem'
+          });
+        }
+        scrollLeft = $(this)[0].offsetLeft - move;
+      } else {
+        scrollLeft = 0;
+      }
+      $('.gift-select').animate({
+        'scrollLeft': scrollLeft
+      });
+
+      $(this).addClass('select').siblings().removeClass('select');
+
+      var id = $(this).find("input[type=hidden]:eq(0)").val();
+      var cardBalance = $(this).find("input[type=hidden]:eq(1)").val();
+      var cardCount = $(this).find("input[type=hidden]:eq(2)").val();
+      var tips = "余额：<em class=\"yuan\">&#165;</em>" + cardBalance;
+      if (cardCount == 1) {
+        tips += "（仅限使用一次）";
+      }
+
+      $('.preferential .gift-card .tips').html(tips);
+      $("#cardId").val(id);
+      $("#tempCardId").val(id);
+
+    }).on('click', 'li.add-gift', function() {
+      oCover.show();
+      $('.bind-card input').val('');
+      $('.bind-card').show();
+    });
+
+    //选择优惠券
+    $('.coupon-select').on('click', 'li', function() {
+      //选中的li居中
+      var idx = $(this).index(),
+        scrollLeft = 0,
+        move = (screen.width - $(this).outerWidth()) / 2;
+
+      $(this).addClass('select').siblings().removeClass('select');
+      if (idx) scrollLeft = $(this)[0].offsetLeft - move;
+      $('.coupon-select').animate({
+        'scrollLeft': scrollLeft
+      });
+
+      var id = $(this).find("input[type=hidden]:eq(0)").val();
+      $("#couponId").val(id);
+      $("#tempCouponId").val(id);
+    });
+
+    //加载页面按顺序自动选择优惠
+    var couponId = $("#couponId").val();
+    var cardId = $("#cardId").val();
+    //如果选中了礼品卡
+    if (cardId != "") {
+      //$('.preferential').addClass('choice');
+      //$('.preferential .gift-card').addClass('select');
+      $('.preferential .gift-card .multi-switch').click();
+      $('.preferential .gift-card .tips').html($("#cardName").val());
+      $("#couponId").val('');
+
+      for (var i = 0; i < $(".gift-select:eq(0) .card-item").length; i++) {
+        if (cardId == $(".gift-select:eq(0) .card-item:eq(" + i + ") input[type=hidden]:eq(0)").val()) {
+          $(".gift-select:eq(0) .card-item:eq(" + i + ")").click();
+        }
+      }
+    }
+    //如果选择了优惠券
+    else if (couponId != "") {
+      if (typeof(whetherGroupBuy) != "undefined" && whetherGroupBuy == 1) {
+        $(".preferential .gift-card .tips").html('该商品不能使用礼品卡');
+      } else {
+        $(".preferential .gift-card .tips").html('请选择一张有效的礼品卡！');
+        if (!$('.gift-select .card-item').length) $(".preferential .gift-card .tips").html('暂无礼品卡！');
+      }
+      $('.preferential .coupon .multi-switch').click();
+      $("#cardId").val('');
+      for (var i = 0; i < $(".coupon-select:eq(0) .coupon-item").length; i++) {
+        if (couponId == $(".coupon-select:eq(0) .coupon-item:eq(" + i + ") input[type=hidden]:eq(0)").val()) {
+          $(".coupon-select:eq(0) .coupon-item:eq(" + i + ")").click();
+        }
+      }
+    }
+    //如果选择了充值卡
+    else if (rechargeCardId != "") {
+      rechargeCard.addClass('select');
+      rechargeCard.find('input').prop('checked', true);
+      $('#recharge-select').css({'display': 'block'});
+    }
+    //如果选择了绿币
+    else if (oUseGreenicon.val() == 'true') {
+      rechargeCard.addClass('select');
+      rechargeCard.find('input').prop('checked', true);
+      $('#recharge-select').css({'display': 'block'});
+    }
+
+    //取消添加礼品卡
+    $('.cancelPop').on('click', function() {
+      oCover.hide();
+      $('.bind-card').hide();
+    });
+
+    //添加礼品卡
+    $('#addGiftCard').on('click', function() {
+      var template = $("#template").val();
+      var source = $("#source").val();
+      var addressId = $("#addressId").val();
+      var cardNo = $("#cardNo").val();
+      var cardPassword = $("#cardPassword").val();
+
+      if (cardNo == "") {
+        $("#popStatus").val(1);
+        $(".bind-card").hide();
+        warningPop("请输入礼品卡卡号");
+        return;
+      }
+
+      if (cardPassword == "") {
+        $("#popStatus").val(1);
+        $(".bind-card").hide();
+        warningPop("请输入密码");
+        return;
+      }
+
+      //防止多次点击
+      if ($(this).attr('data-click') == 1) return;
+      $(this).attr('data-click', 1);
+
+      var param = {
+        cardNo: cardNo,
+        cardPassword: cardPassword
+      };
+
+      $.post('/giftcard/addGiftCardUser', param, function(response) {
+        $('#addGiftCard').attr('data-click', 0);
+        if (response.success) {
+          $(".bind-card").hide();
+          warningPop('添加成功');
+          window.location.reload();
+        } else {
+          $("#popStatus").val(1);
+          $(".bind-card").hide();
+          warningPop(response.message);
+        }
+      });
+    });
+
+    //弹窗取消
+    $('.hidePop').on('click', function() {
+      oWarning.hide();
+      var popStatus = $("#popStatus").val();
+
+      if (popStatus == 1) {
+        $(".bind-card").show();
+      } else {
+        oCover.hide();
+      }
+    });
+  });
+
+  //提交验证
+  function formSubmit() {location.href="/order/createOrder";return;
+    if ($(".submit-btn").attr("disabled") == "disabled") return;
+    $(".submit-btn").attr("disabled", "disabled");
+
+    var buyerMessages = $(".buyerMessage");
+    var buyerMessage = "";
+
+    for (var i = 0; i < buyerMessages.length; i++) {
+      buyerMessage += buyerMessages.eq(i).val() + " $<bbg>@";
+    }
+
+    if (buyerMessage.length >= 7) {
+      buyerMessage = buyerMessage.substring(0, buyerMessage.length - 7);
+    }
+
+    $("#buyerMessage").val(buyerMessage);
+    $("#submitCheck").val("1");
+
+    //如果未选择充值卡
+    if (!rechargeCard.find('input').prop('checked')) $('#rechargeCardId').val('');
+
+    //如果未选择优惠券
+    if (!couponCard.find('input').prop('checked')) $('#couponId').val('');
+
+    //如果未选择绿币
+    if (!oGreenCoin.find('input').prop('checked')) oUseGreenicon.val('false');
+
+
+    //验证是否关注 允许组团限制
+    var source = $("#source").val();
+    if(source != 1) {
+      source = 0;
+    }
+
+    $.post('/order/verifyCreateOrder',{'source':source}, function(response) {
+        if (!response.success) {
+
+            if(response.code==-2){
+                location.href="/cart/index?template="+$("#template").val();
+            }else{
+                alert(response.message);
+            }
+
+            document.oform.action="";
+
+            $(".submit-btn").attr("disabled", "");
+        }else{
+            document.oform.action="/order/createOrder";
+
+            document.oform.submit();
+        }
+    });
+  }
+
+  //选择地址
+  function gotoChooseAddress(addressId) {
+    var template = $("#template").val();
+    var source = $("#source").val();
+    var cardId = $("#cardId").val();
+    var html = "/address/choseAddress?template=" + template + "&source=" + source + "&addressId=" + addressId;
+
+    if (cardId != "") {
+      html += "&cardId=" + cardId;
+    }
+    window.location.href = html;
+  }
+
+  //验证是否提交
+  function checkSubmit() {
+    var submitCheck = $("#submitCheck").val();
+    if (submitCheck == 0) {
+      return false;
+    }
+
+    $(".submit-btn").attr("disabled", false);
+
+    return true;
+  }
+
+  //remark弹窗
+  function warningPop(text) {
+    oWarnTips.html(text);
+    if (oWarnTips.height() > 21) oWarnTips.css('textAlign', 'left');
+    else oWarnTips.css('textAlign', 'center');
+    oWarning.show();
+    oCover.show();
+  }
+</script>
+<script>
+  //关闭充值卡弹窗和充值卡选项
+  $('.recharge-warning .btn').click(function() {
+    $('.recharge-warning').hide();
+    oCover.hide();
+    preferential.removeClass('choice');
+    rechargeCard.removeClass('select');
+    rechargeCard.find('input').prop('checked', false);
+    $('#recharge-select').css({'display': 'none'});
+  });
+
+$(function() {
+  var oGreenCoinRule = $('#greencoin-pop');
+
+    //点击绿币提示按钮，规则弹窗
+  $('.greencoin-tip').click(function() {
+    $('body').addClass('cover-box');
+    oCover.show();
+    oGreenCoinRule.show();
+  });
+
+  //关闭弹窗
+  oGreenCoinRule.on('click', '.hidePop', function() {
+    oGreenCoinRule.hide();
+    $('body').removeClass('cover-box');
+  });
+});
+
+</script>
+<div style="display:none">
+  <script>
+    var path = window.location.host;
+
+    if (path == "bbgmall.wb1688.com") {
+      var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+    } else if (path == "mall.wb1688.com") {
+      var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+</div></body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>安全设置</title>
+<link rel="stylesheet" type="text/css" href="/resources/red/css/style.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/page.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/cloud.css?v=201612311426">
+<script type="text/javascript" src="/resources/js/jquery.js?v=201612311426"></script>
+<script type="text/javascript" src="/resources/js/common.js?v=201706201140"></script>
+<!--<script type="text/javascript" src="/resources/js/main.js?v=201612291707"></script>-->
+<script type="text/javascript" src="/resources/js/upload.js?v=201602011132"></script>
+<script type="text/javascript" src="/resources/js/safe/safe.js?v=201706211111"></script>
+</head>
+
+<body>
+<input type="hidden" value="bbgmall" id ="template"/>
+<input type="hidden" value="17605926688" id ="validateMobile"/>
+
+<div class="box box1">
+	<ul>
+		<li>手机号：<br/><input type="text" value="17605926688" name="validateMobile" placeholder="输入绑定的手机号"><span class="red error_validateMobile"></span></li>
+		<li>验证码：<br/><div class="code2"><input name="getCode" onclick="javascript:time('safe_pwd_forget')" type="button" value="点击发送验证码"></div><div class="code1"><input type="text" name="code" id="code"></div><span class="red error_code"></span></li>
+		<li>设置提现新密码：<br/><input type="password" name="password" placeholder="6-20字符"><span class="red error_password"></span></li>
+		<li>重复提现新密码：<br/><input type="password" name="pass_confirm" placeholder="6-20字符"><span class="red error_pass_confirm"></span></li>
+	</ul>
+</div>
+
+<div class="btn btn1"><input class="theme-bg" onclick="javascript:safeSet(2)" type="button" value="确定"><input class="bgDark"  onclick="javascript:history.go(-1)" type="button" value="取消"></div>
+
+<!--<div class="copyright2">版权所有 &copy; 网邦信息技术提供技术支持</div>-->
+
+<div class="popup">
+	<div class="popup_info">
+		<div class="popup_tips">验证码发送成功，请及时检查您的手机。</div>
+		<div class="popup_btn popup_btn1"><a href="javascript:void(0)" class="hidePopup">确　定</a></div>
+	</div>
+</div>
+<div class="popup_bg"></div>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+</html>

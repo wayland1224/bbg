@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>地址管理</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/address.css?v=2" />
+  <style>
+    body {-webkit-text-size-adjust: 100% !important;text-size-adjust: 100% !important;-moz-text-size-adjust: 100% !important;opacity:0; }
+  </style>
+  <script>
+        /*
+         * 页面加入这段代码可使Android机器页面不再受到用户字体缩放强制改变大小
+         * 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示
+         * 仅供参考
+         */
+        (function(){
+            if (typeof(WeixinJSBridge) == "undefined") {
+                document.addEventListener("WeixinJSBridgeReady", function (e) {
+                    setTimeout(function(){
+                        WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                            // alert(JSON.stringify(res));
+                        });
+                    },0);
+                });
+            } else {
+                setTimeout(function(){
+                    WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                        // alert(JSON.stringify(res));
+                    });
+                },0);
+            }
+        })();
+        $(function() {
+;            setTimeout(function(){
+                $('body').css({opacity:1});
+            },1000);
+        });
+	</script>
+  <script src="/m/js/address/address.js?v=201707121140"></script>
+</head>
+
+<body>
+<!--隐藏域-->
+<input type="hidden" value="bbgmall" id ="template"/>
+<input type="hidden" id="source" value="center"/>
+
+<div class="content has-foot">
+<!--地址列表-->
+<div class="address-list">
+  <ul>
+	    	<li class="item default-setting">
+	      <div class="address-title clear">
+	        <span class="consignee fl-l">陈文龙</span>
+	        <span class="consignee-tel fl-r">13328758725</span>
+	      </div>
+	      <div class="address-info">福建省,厦门市,思明区望海路779号</div>
+	      <div class="address-action clear">
+	        <span class="set-default" >
+	          <span class="icon p-rel"></span>设为默认地址
+	        </span>
+	        <span class="fl-r">
+	          <span class="address-edit"data-id="4645"><span class="icon p-rel"></span>编辑</span>
+	          <span class="address-del" data-id="4645"><span class="icon p-rel"></span>删除</span>
+	        </span>
+	      </div>
+	    </li>
+  </ul>
+</div>
+</div>
+
+<!--添加新地址-->
+<div class="add-address-btn bottom-fix" onclick="location.href='/address/showLocation?template=bbgmall&source=center'">添加新地址</div>
+
+<!--弹窗-->
+<div class="cover"></div>
+
+</body>
+
+</html>

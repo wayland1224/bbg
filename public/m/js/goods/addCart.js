@@ -44,7 +44,7 @@ function goodsListAddToCart(obj) {
  * 加入购物车(全局)
  * 商品不入库
  */
-function addGoodsToCart(params, goodsUrl, callback) {
+function addGoodsToCart(params, goodsUrl, callback) {return true;
   if (addCartLoading) return;
   addCartLoading = true;
 
@@ -69,7 +69,7 @@ function addGoodsToCart(params, goodsUrl, callback) {
 }
 
 //商品列表加入购物车回调
-function AddGoodsToCartResult(goodsUrl, data) {
+function AddGoodsToCartResult(goodsUrl, data) {return true;
   var numBuy = data.numBuy,
       groupBuyPrice = data.groupBuyPrice,
       picServerUrl1 = data.picServerUrl1,
@@ -97,7 +97,7 @@ function AddGoodsToCartResult(goodsUrl, data) {
 }
 
 //商品详情页加入购物车回调
-function AddGoodsToCartResult2(goodsUrl, data) {
+function AddGoodsToCartResult2(goodsUrl, data) {return true;
   var numBuy = data.numBuy,
       groupBuyPrice = data.groupBuyPrice,
       picServerUrl1 = data.picServerUrl1,

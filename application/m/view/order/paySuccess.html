@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>支付成功</title>
+  <script>
+    if (sessionStorage.fromPaySuccessToPersonal == 1) {
+      //再次从待发货返回则跳转个人中心
+      sessionStorage.fromPaySuccessToPersonal = 2;
+      document.title = '个人中心';
+      location.href = '/user/center?template=bbgmall';
+    } else if (sessionStorage.fromPaySuccessToPersonal == 2) {
+      //再次从个人中心返回则跳转首页
+      sessionStorage.removeItem('fromPaySuccessToPersonal');
+      document.title = '个人中心';
+      location.href = '/index?template=bbgmall';
+    }
+  </script>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/pay.css?v=201703201200">
+  <style>
+    body{opacity: 0;}
+    .promotion{-webkit-align-items: center; align-items: center; -webkit-justify-content:center; justify-content:center;margin-top: 4.2rem;font-size: 1.2rem;}
+    .promotion-img{width: 3.4rem; height: 3.4rem; border-radius: .3rem;}
+    .promotion-text{margin-left: 1.2rem; margin-right: 1rem;line-height: 3.4rem;color: #171717;}
+    .promotion-btn{display: inline-block; padding: 0 1.1rem; line-height: 3.2rem; color: #7f6004; border: .1rem solid #7f6004; border-radius: 1.5rem; box-shadow: 0px 1px 0px .5px #7f6004;}
+  </style>
+</head>
+
+<body>
+<div>
+  <input type="hidden" id="wechat_appId" value="5"/>
+  <input type="hidden" id="userId" value="19591"/>
+  <input type="hidden" id="template" value="bbgmall"/>
+  <input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+</div>
+
+<!--content START-->
+<div class="content has-foot">
+  <header class="success">
+    <img src="/m/img/icon-pay-success1.png">
+    <p>支付成功</p>
+  </header>
+
+  <div class="mes clear">
+    <p>我们将尽快安排发货，请买家保持手机通讯畅通，以便快递员能第一时间联系到您。</p>
+    <a class="fl" href="/index?template=bbgmall">返回首页</a>
+      <a class="fr" href="/order/findFrontOrders?orderStatus=2&begType=1&template=bbgmall">查看订单</a>
+  </div>
+
+  <div class="safety-tips border-top">
+    <p>安全提醒：XXX不会以订单异常、系统升级为由要求您支付额外费用，请谨防钓鱼链接或诈骗电话。如有疑问，请拨打客服电话：<a href="tel:11111111">11111111</a>。</p>
+  </div>
+
+  <!-- APP推广 -->
+  <!--<div class="promotion flex">-->
+    <!--<img class="promotion-img" src="http://image.wb1688.com/1500272430440.png" alt="appLogo">-->
+    <!--<span class="promotion-text">前往APP客户端,有更多惊喜哦~</span>-->
+    <!--<a class="promotion-btn" href="https://a.app.qq.com/o/simple.jsp?pkgname=com.wb1688.bbg">立即下载</a>-->
+  <!--</div>-->
+</div>
+<!--content END-->
+
+<script src="/m/js/pay/paySuccess.js?v=201705191400"></script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

@@ -571,9 +571,9 @@ var setOrderStatus = function(orderId, temp, code) {
 function goPayment(orderNo, totalFee) {
   var template = $('#template').val();
   if(template != null) {
-    location.href = "/pay/weixin/index?showwxpaytitle=1&body=" + orderNo + "&orderNo=" + orderNo + "&totalFee=" + totalFee + "&template=" + template;
+    location.href = "/payindex?showwxpaytitle=1&body=" + orderNo + "&orderNo=" + orderNo + "&totalFee=" + totalFee + "&template=" + template;
   } else {
-    location.href = "/pay/weixin/index?showwxpaytitle=1&body=" + orderNo + "&orderNo=" + orderNo + "&totalFee=" + totalFee;
+    location.href = "/pay/index?showwxpaytitle=1&body=" + orderNo + "&orderNo=" + orderNo + "&totalFee=" + totalFee;
   }
 };
 

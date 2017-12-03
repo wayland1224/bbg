@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>收货地址</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/address.css"/>
+  <style>
+    body {-webkit-text-size-adjust: 100% !important;text-size-adjust: 100% !important;-moz-text-size-adjust: 100% !important;opacity:0; }
+    .cover, #cover{background: rgba(0,0,0,.3);}
+    .loading-tips{position: fixed;z-index: 1;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);width: 20rem;height: 12rem;border-radius: 1rem;background: rgba(0, 0, 0, 0.5) url(../libs/layer/skin/default/loading-0.gif) no-repeat center;}
+  </style>
+  <script>
+        /*
+         * 页面加入这段代码可使Android机器页面不再受到用户字体缩放强制改变大小
+         * 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示
+         * 仅供参考
+         */
+        (function(){
+            if (typeof(WeixinJSBridge) == "undefined") {
+                document.addEventListener("WeixinJSBridgeReady", function (e) {
+                    setTimeout(function(){
+                        WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                            // alert(JSON.stringify(res));
+                        });
+                    },0);
+                });
+            } else {
+                setTimeout(function(){
+                    WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                        // alert(JSON.stringify(res));
+                    });
+                },0);
+            }
+        })();
+        $(function() {
+            setTimeout(function(){
+                $('body').css({opacity:1});
+            },1000);
+        });
+    </script>
+  <script src="/m/js/address/address.js?v=201710201100"></script>
+</head>
+
+<body>
+<!--地址列表-->
+<div class="address-list has-foot">
+  <ul>
+	    	<li class="item clear default-setting" id="li_4645" onclick="chkLocation(4645,'1','');">
+	      <aside class="fl-l">
+	        <span class="icon p-rel"></span>
+	      </aside>
+	      <section>
+	        <div class="address-title clear">
+	          <span class="consignee fl-l">陈文龙</span>
+	          <span class="consignee-tel fl-r">13328758725</span>
+	        </div>
+	        <div class="address-info">
+	        	<span style="color: #f9cd02;">[默认地址]</span><!--
+	        	-->福建省,厦门市,思明区望海路779号
+	       </div>
+	        <div class="address-action clear">
+	          <span class="fl-r">
+	            <span class="address-edit" data-id="4645"><span class="icon p-rel"></span>编辑</span>
+	          </span>
+	        </div>
+	      </section>
+	    </li>
+  </ul>
+</div>
+
+<!--添加新地址-->
+
+<footer class="bottom-fix add-address-btn" id="addAddress">添加新地址</footer>
+
+<div class="cover"id="cover"></div>
+
+<!--隐藏域-->
+<div>
+  <input type="hidden" value="bbgmall" id ="template"/>
+  <input type="hidden" id="source" value="1"/>
+  <input type="hidden" id="cardId" value=""/>
+  <input type="hidden" id="lotteryWinningId" value=""/>
+</div>
+
+<script>
+  var $cover = $('#cover');
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

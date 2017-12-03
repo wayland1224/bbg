@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+<title>我的评论</title>
+<link rel="stylesheet" type="text/css" href="/resources/red/css/style.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/main.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/page.css?v=201612311426">
+<link rel="stylesheet" type="text/css" href="/resources/css/cloud.css?v=201612311426">
+<script type="text/javascript" src="/resources/js/jquery.js?v=201612311426"></script>
+<script type="text/javascript" src="/resources/js/common.js?v=201706201140"></script>
+<!--<script type="text/javascript" src="/resources/js/main.js?v=201612291707"></script>-->
+<script src="/resources/js/rate/rate.js?v=201602011132"></script>
+<script src="/resources/js/slide.js?v=201602011132"></script>
+<link rel="stylesheet" href="/m/css/ImageView.css?v=201612271716">
+<style>
+	/*图片懒加载*/
+	img.lazyload,img.lazyloading {width: 100%;opacity: 0.5;background: #f7f7f7 url(/m/img/watermark-logo.png) no-repeat center;background-size: 3.2rem 3.2rem;}
+</style>
+<script src="/m/js/zepto.js?v=201612271716"></script>
+<script>
+$(window).resize(function(){
+	$(".search_result2").height($(window).height()-105+"px");
+});
+</script>
+<style>
+	.yuan{margin-right:2px;}
+	.foot2 .fr a, .foot li.navCur a span, .personHead, .store_banner, .store, .addCart h1, .star em.starCur, .cloud_store .hd .on, .comment .hd .on, .comment_nav1 li.comment_cur1 {
+    	background-color:#f9cd02;
+	}
+	.comment_nav{background: #eee;}
+	.comment_nav ul{padding:0 12px;}
+	h1{position: relative;max-width:100vw;overflow:hidden;border:0;}
+	h1 > span:first-of-type{display:inline-block;padding-right:120px;overflow:hidden;width:100vw;line-height:20px;white-space:nowrap;text-overflow:ellipsis;word-wrap: break-word;word-break: break-all;}
+	h1 > span:last-of-type{position: absolute;top:11px;right:10px;}
+	.star em{margin-left: 4px;}
+	.list,.list li{float:none;}
+	.list ul{padding:0;}
+	.list li{padding:10px 12px;border:0;word-wrap: break-word;}
+	.list .goods_des{padding-left:96px;background: #fafafa;}
+	.list .goods_des img{position: absolute;margin-left:-84px;width:72px;height:72px;}
+	.list .goods_des .list_title{margin:0;font-size:12px;}
+	.list .goods_des .sku_des{overflow: hidden;height: 18px;line-height:1.5;text-overflow: ellipsis;word-break: break-all;}
+	.list .goods_des .sku_price{font-size: 14px;color:#666;}
+	.list .goods_des .sku_price .count {color: #8b8b8b;margin-left: 18px;font-size: 12px;}
+	.list .text,.list .img-list{padding-bottom:0;}
+	.list .text.line-clamp{display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;overflow: hidden;}
+	.list .see,.list .saw{display: none;padding-right:12px;font-size: 13px;line-height: 24px;text-align: right;color: #f9cd02;}
+	.list .img-list{font-size:0;-webkit-text-size-adjust: 100%;}
+	.list .img-list img{display: inline-block;margin-right:10px;margin-bottom:10px;width:97px;height:97px;}
+	.load-more span {display:block;margin:8px auto;width:80px;border-radius:3px;background:#989874;color:#fff;font-size:13px;line-height:20px;text-align:center;}
+</style>
+</head>
+
+<body>
+<input type="hidden" id="template" value="bbgmall"/>
+<div class="wrap1">
+
+<div class="comment" id="slide">
+	<div class="hd comment_nav">
+		<ul>
+			<li>好评</li>
+			<li>中评</li>
+			<li>差评</li>
+		</ul>
+	</div>
+
+	<!--tab1-->
+	<div class="bd comment_con">
+		<div id="myRateList1">
+
+				<div class="search_result2"><p><img src="/resources/img/icon_alert.png">&nbsp;很抱歉，暂无好评记录</p></div>
+		</div>
+
+		<!--tab2-->
+		<div id="myRateList2">
+
+				<div class="search_result2"><p><img src="/resources/img/icon_alert.png">&nbsp;很抱歉，暂无中评记录</p></div>
+		</div>
+
+		<!--tab3-->
+		<div id="myRateList3">
+
+				<div class="search_result2"><p><img src="/resources/img/icon_alert.png">&nbsp;很抱歉，暂无差评记录</p></div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="copyright1">版权所有 &copy; 网邦信息技术提供技术支持</div>-->
+</div><!--wrap end-->
+
+<div class="popup_bg"></div>
+
+<script src="/m/libs/lazysizes.min.js?v=4"></script>
+<script src="/m/js/ImageView.js?v=201704211101"></script>
+<script>
+	TouchSlide({
+		slideCell:"#slide"
+	});
+
+	//价格保留两位小数
+	var toFixedPrices = $('.toFixed'),tmpText = '';
+	for (var i = 0; i < toFixedPrices.length; i++) {
+		tmpText = parseFloat($('.toFixed').eq(i).html()).toFixed(2);
+		$('.toFixed').eq(i).html(tmpText);
+	}
+
+	$(function() {
+  		//评论超过三行，添加.line-clamp，查看全文
+  		var reviewsInfo = $('.bd .text');
+  		for (var i = 0; i < reviewsInfo.length; i++) {
+    		if (reviewsInfo.eq(i).height() > 70) {
+      			reviewsInfo.eq(i).addClass('line-clamp');
+      			reviewsInfo.eq(i).parent().children('.see').show();
+			}
+		}
+
+		//点击查看全文显示当前全文
+		$('.bd').on('click', '.see', function() {
+			$(this).parent().children('li.text').removeClass('line-clamp');
+			$(this).text('收起').removeClass('see').addClass('saw');
+		});
+
+		//点击收起当前评论
+		$('.bd').on('click', '.saw', function() {
+			$(this).parent().children('li.text').addClass('line-clamp');
+			$(this).text('查看全文').addClass('see').removeClass('saw');
+		});
+	});
+
+	$(function(){
+		/* 评价图 */
+		var imgRateSrc=[],imgRateNum=[],snum_rate,idx_rate;
+		for(var i=0;i<$(".img-list img").length;i++){
+			imgRateSrc.push($(".img-list img").eq(i).attr("data-src"));
+			$(".img-list img").eq(i).attr("data-num","R"+i);
+			imgRateNum.push("R"+i);
+		}
+
+		$(".img-list img").click(function(){
+			snum_rate=$(this).attr("data-num");
+			idx_rate=imgRateNum.indexOf(snum_rate);
+			ImageView(idx_rate,imgRateSrc);
+		})
+		/* 评价图end */
+
+		//加载更多
+		$('.load-more1').click(function() {
+			loadMore(1);
+		});
+
+		//加载更多
+		$('.load-more2').click(function() {
+			loadMore(2);
+		});
+
+		//加载更多
+		$('.load-more3').click(function() {
+			loadMore(3);
+		});
+	});
+
+	//加载更多
+	function loadMore(rateType){
+		var page = parseInt($('.page'+rateType).val());
+		var pageSize = parseInt($('.pageSize'+rateType).val());
+		var total = parseInt($('.total'+rateType).val());
+		$.post('/user/myRateMore', {
+			'rateType' : rateType,
+			'start' : page + 1,
+			'limit' : pageSize,
+			'template' : $('#template').val()
+		}, function(response) {
+			page = page + 1;
+			total = response.map.page.total;
+			var list = response.map.page.list;
+
+			var html="";
+			for (var i = 0; i < list.length; i++) {
+				html +="<div class=\"list list1\"><h1><span>";
+
+				if(list[i].userName!=null){
+					html +=list[i].userName;
+				}
+
+				html +="</span><span class=\"star\">";
+				for(var j=0;j<parseInt(list[i].evaluation);j++){
+					html +="<em class=\"starCur\"></em>";
+				}
+
+				if(parseInt(list[i].evaluation)==1){
+					html +="<em></em><em></em><em></em><em></em>";
+				}
+
+				if(parseInt(list[i].evaluation)==2){
+					html +="<em></em><em></em><em></em>";
+				}
+
+				if(parseInt(list[i].evaluation)==3){
+					html +="<em></em><em></em>";
+				}
+
+				if(parseInt(list[i].evaluation)==4){
+					html +="<em></em>";
+				}
+
+				html +="</span></h1><ul><li class=\"goods_des\">";
+				html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].goodsPicUrl+"?imageView2/1/w/192/h/192>";
+				html +="<p class=\"list_title\">"+list[i].goodsName+"</p>";
+				html +="<p class=\"sku_des\"></p>";
+				html +="<p class=\"sku_price\"><em class=\"yuan\">¥</em><span class=\"toFixed\">"+parseFloat(list[i].goodsPrice).toFixed(2)+"</span>";
+				html +="<span class=\"count\">×<span>1</span></span></p></li>";
+				html +="<li class=\"text\">"+list[i].content+"</li>";
+
+				if(list[i].feel!=null){
+					html +="<li class=\"text\">"+list[i].feel+"</li>";
+				}
+
+				html +="<p class=\"see\">查看全文</p>";
+
+				if(list[i].type!=null&&list[i].type==2){
+					html +="<li class=\"img-list\">";
+
+					if(list[i].pic1!=null&&list[i].pic1!=""){
+						html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].pic1+">";
+					}
+
+					if(list[i].pic2!=null&&list[i].pic2!=""){
+						html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].pic2+">";
+					}
+
+					if(list[i].pic3!=null&&list[i].pic3!=""){
+						html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].pic3+">";
+					}
+
+					if(list[i].pic4!=null&&list[i].pic4!=""){
+						html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].pic4+">";
+					}
+
+					if(list[i].pic5!=null&&list[i].pic5!=""){
+						html +="<img class=\"lazyload\" src=\"/m/img/transparent.png\" data-src="+list[i].pic5+">";
+					}
+				}
+
+				html +="</li><li class=\"gray9 tr\">"+list[i].addTime+"</li></ul></div>";
+			}
+
+			$("#myRateList"+rateType+"> .list:last").after(html);
+
+			if (total - pageSize * page <= 0) {
+				$('.load-more'+rateType).hide();
+			}
+
+			$('.page'+rateType).val(page);
+			$('.total'+rateType).val(total);
+
+			/* 评价图 */
+			var imgRateSrc=[],imgRateNum=[],snum_rate,idx_rate;
+			for(var i=0;i<$(".img-list img").length;i++){
+				imgRateSrc.push($(".img-list img").eq(i).attr("data-src"));
+				$(".img-list img").eq(i).attr("data-num","R"+i);
+				imgRateNum.push("R"+i);
+			}
+
+			$(".img-list img").click(function(){
+				snum_rate=$(this).attr("data-num");
+				idx_rate=imgRateNum.indexOf(snum_rate);
+				ImageView(idx_rate,imgRateSrc);
+			})
+			/* 评价图end */
+
+			//评论超过三行，添加.line-clamp，查看全文
+			var reviewsInfo = $('.bd .text');
+			for (var i = 0; i < reviewsInfo.length; i++) {
+				if (reviewsInfo.eq(i).height() > 70) {
+					reviewsInfo.eq(i).addClass('line-clamp');
+					reviewsInfo.eq(i).parent().children('.see').show();
+				}
+			}
+		});
+	}
+</script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+</html>

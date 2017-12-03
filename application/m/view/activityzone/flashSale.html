@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+    <title>限时抢购</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+    <link rel="stylesheet" href="/m/css/swiper.min.css">
+    <link rel="stylesheet" href="/m/css/activity/festival.css?v=8">
+</head>
+
+<body class="empty">
+<div class="empty goods-empty" id="empty" data-content="活动已结束">
+    <a href="/index?template=bbgmall"><span class="to-home-btn">返回首页</span></a>
+</div>
+
+<!--content START-->
+<div class="content" style="background: #2d3132;"><!--  -->
+
+    <!--banner-->
+
+    <!--main-->
+    <div class="main ovh">
+        <!--活动详情-->
+
+        <!--nav-->
+        <nav class="nav font0" id="nav">
+        </nav>
+
+        <!--商品列表-->
+        <div class="goods-content" id="content">
+            <input id="pageSize" type="hidden" value="15">
+        </div>
+    </div>
+</div>
+<!--content END-->
+
+<!-- 隐藏域 -->
+<div>
+    <input type="hidden" id="template" value="bbgmall">
+    <input type="hidden" id="title" value=""/>
+    <input type="hidden" id="imgUrl" value=""/>
+    <input type="hidden" id="link" value="http://mall.wb1688.com/activityzone/flashSale/?user_id=19591&template=bbgmall"/>
+    <input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+    <input type="hidden" id="existsOrNo" value="3">
+    <input type="hidden" id="activityId" value="">
+    <input type="hidden" id="status" value="">
+    <input type="hidden" id="appId" value="">
+    <input type="hidden" id="navIdx" value="0">
+</div>
+
+<script src="/m/libs/lazysizes.min.js?v=4"></script>
+<script src="/m/libs/swiper.min.js"></script>
+<script src="/m/libs/layer/layer.js"></script>
+<script src="/m/libs/jquery-countDown.js"></script>
+<script src="/m/js/activity/festival.js?v=7"></script>
+<script>
+    if ($('#bg-img').length == 0 || $('#bg-img').attr('src') == '') {
+        $('#activity-detail').addClass('bg-ff');
+    }
+</script>
+</body>
+
+</html>

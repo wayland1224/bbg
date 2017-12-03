@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>搜索</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/search.css?v=2">
+</head>
+
+<body class="bg-ee">
+<!-- 隐藏域 -->
+<div>
+  <input type="hidden" id="template" value="bbgmall"/>
+  <input type="hidden" id="source" value="index"/>
+  <input type="hidden" id="type" value="1"/>
+</div>
+
+<!--content START-->
+<div class="content">
+  <!--search START-->
+  <header>
+    <div class="search p-rel">
+      <button class="search-btn p-abs"></button>
+      <input class="search-txt" type="search" placeholder="搜索商品" maxlength="20">
+    </div>
+  </header>
+  <!--search END-->
+
+  <div class="search-list" id="hot">
+      <!--热搜 START-->
+      <div class="hot-search-list font0" id="hot-search">
+        <h2 class="search-title">热搜</h2>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 448807836, id=15, appId=5, info=冰糖橙, position=2, serialVersionUID=1]">冰糖橙</span>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 1150731388, id=16, appId=5, info=水果, position=4, serialVersionUID=1]">水果</span>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 104713234, id=4, appId=5, info=红薯, position=7, serialVersionUID=1]">红薯</span>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 1126216945, id=7, appId=5, info=百香果, position=9, serialVersionUID=1]">百香果</span>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 407329957, id=14, appId=5, info=赣南脐橙, position=9, serialVersionUID=1]">赣南脐橙</span>
+          <span class="ellipsis hot-info" data="MallHotSearch [Hash = 1964204310, id=9, appId=5, info=核桃, position=11, serialVersionUID=1]">核桃</span>
+      </div>
+      <!--热搜 END-->
+
+  </div>
+</div>
+
+<script>
+  var oSearchText = $('.search .search-txt'),
+    oSearchBtn = $('.search .search-btn'),
+    oSearchList = $('#hot'),
+    oHotSearch = $('#hot-search'),
+    oHistory = $('#history'),
+    template = $('#template').val(),
+    source = $('#source').val(),
+    type = $('#type').val();
+
+  $(function() {
+    oSearchBtn.click(function() {
+      var keyword = oSearchText.val();
+      if (!keyword) return;
+      var sortTitle = '小邦帮您搜';
+      var url = "";
+      if(type==3){
+        url = '/region/toSearchPage/' + keyword ;
+      }else{
+        url = '/goods/search?sortTitle=' + sortTitle + '&keyword=' + keyword + '&source=' + source + '&type=' + type + '&template=' + template;
+      }
+        location.href = url;
+        
+    });
+
+    oHistory.on('click', 'i', clearHistory);
+
+    //点击热搜或历史记录
+    oSearchList.on('click', 'span', function() {
+      listToSearch($(this).html());
+    });
+
+    document.onkeydown = keyDownSearch;
+  });
+
+  //清除历史记录
+  function clearHistory() {
+    $.ajax({
+      type: 'POST',
+      dataType: 'JSON',
+      url: '/goods/clearUserSearch',
+      success: function(res) {
+        if (res.code == 0) {
+          oHistory.remove();
+        }
+      },
+      error: function(res) {
+        alert(res.message);
+      }
+    });
+  }
+
+  //点击热搜或历史记录，填入搜索框搜索
+  function listToSearch(text) {
+    oSearchText.val(text);
+    oSearchBtn.click();
+  }
+
+  function keyDownSearch(e) {
+    var theEvent = e || window.event;
+    var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+    if (code == 13) {
+      oSearchBtn.click();
+      return false;
+    }
+    return true;
+  }
+</script>
+
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

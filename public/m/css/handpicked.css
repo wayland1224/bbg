@@ -1,0 +1,19 @@
+@charset "utf-8";
+body{background-color: #eee;}
+h2,
+.tips{color: #2b2023; text-align: center;}
+h2{font-size: 1.6rem;}
+.tips{font-size: 1.2rem;}
+a{display: block;}
+img{display: block; width: 100%; height: 100%;}
+/*超值必买*/
+.premium h2{padding-top: .6rem; line-height: 3.8rem;}
+.premium .tips{padding-bottom: 1.8rem; line-height: 1.2rem;}
+.premium li{margin: 0 3.07% 1.2rem;}
+.premium li a{height: 65.33vw;}
+.premium section{z-index: 15; bottom: 0; box-sizing: border-box; padding: 3rem 1rem .4rem; width: 100%; background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)); color: #fff; letter-spacing: .1rem;}
+.premium section h6{font-size: 1.7rem; line-height: 1.7rem; font-weight: 600;}
+.premium section .price{font-size: 1.7rem; line-height: 3.7rem; color: #fff;}
+.premium section del{color: #ccc;}
+.premium section .icon-add-cart-c{z-index: 20; bottom: 0; right: 0; display: inline-block; width: 4rem; height: 3.6rem; background: url(../img/icon-picked-add-cart-circle.png) no-repeat; background-size: 3rem 3rem;}
+/*整站精选*/

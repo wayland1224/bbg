@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>个人中心</title>
+  <script>
+    if (sessionStorage.fromOrderSuccessToPersonal == 1) {
+      document.title = '待付款';
+      sessionStorage.toIndex = 1;
+      sessionStorage.fromOrderSuccessToPersonal = 0;
+      location.href = '/order/findFrontOrders?orderStatus=1&begType=1&template=bbgmall';
+    }
+  </script>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" href="/m/css/personal-index.css?v=201710101000">
+  <script src="/m/js/common/common.js?v=2017005271100"></script>
+  <script>
+    isRegister();
+  </script>
+</head>
+
+<body class="bg-ee">
+<!--隐藏域-->
+<div>
+  <input type="hidden" id="template" value="bbgmall">
+  <!-- <input type="hidden" id="mobile" value="17605926688"> -->
+</div>
+
+<!--content START-->
+<div class="content has-foot">
+  <!--基本信息-->
+  <header class="personal-header flex">
+    <a class="cell" href="/user/showInformation">
+      <div class="headimg"><img src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJRU0qu0cMQFyMYpWbXHylVYGiciaEeKicfl4pdmss2zZqUVahDKo61ulZ3Y9dzOQTAOA6nGNc67K4mg/0"></div>
+      <div class="head-content">
+        <p class="nickname ellipsis"> 陈文龙 </p>
+        <!--<p class="greencoin-balance">绿币余额：0</p>-->
+      </div>
+    </a>
+  </header>
+
+  <!-- APP推广 -->
+  <!--<div class="promotion flex" id="promotion">-->
+    <!--<span class="icon promotion-remove"></span>-->
+    <!--<img class="promotion-img" src="http://image.wb1688.com/1500272430440.png" alt="appLogo">-->
+    <!--<span class="promotion-text">前往APP客户端,有更多惊喜哦~</span>-->
+    <!--<a class="promotion-btn" href="https://a.app.qq.com/o/simple.jsp?pkgname=com.wb1688.bbg">立即下载</a>-->
+  <!--</div>-->
+
+  <!--我的订单 START-->
+  <section class="myorder">
+    <a href="javascript:findOdrder(1,0)"><h2 class="myorder-title">我的订单</h2></a>
+    <div class="flex border-h">
+      <a class="cell myorder-item" href="javascript:findOdrder(1,1)"><span class="icon myorder-icon">待付款</span></a>
+      <a class="cell myorder-item" href="javascript:findOdrder(1,2)"><span class="icon myorder-icon">待发货</span></a>
+      <a class="cell myorder-item" href="javascript:findOdrder(1,3)"><span class="icon myorder-icon">待收货</span></a>
+      <a class="cell myorder-item" href="javascript:findOdrder(1,4)"><span class="icon myorder-icon">待评价</span></a>
+    </div>
+  </section>
+  <!--我的订单 END-->
+
+  <!--厨艺秀 START-->
+   <!--<section class="cooking">-->
+    <!--<h2 class="cooking-title">厨艺秀<i class="icon cooking-title-icon"></i></h2>-->
+    <!--<div class="flex border-h">-->
+      <!--<a class="cell cooking-item" href="/cook/collect?template=bbgmall"><span class="icon cooking-icon">我的收藏</span></a>-->
+      <!--<a class="cell cooking-item" href="/cook/postMenu?template=bbgmall"><span class="icon cooking-icon">上传菜谱</span></a>-->
+      <!--<a class="cell cooking-item" href="/cook/postTopic?template=bbgmall"><span class="icon cooking-icon">发表话题</span></a>-->
+      <!--<a class="cell cooking-item" href="/cook/my?template=bbgmall"><span class="icon cooking-icon">查看我的</span></a>-->
+    <!--</div>-->
+  <!--</section>-->
+  <!--厨艺秀 END-->
+
+  <!--列表 START-->
+  <div class="personal-list p-rel">
+    <!--<ul class="list border-v">-->
+      <!--<li class="item"><a class="list-icon" href="/groupon/mygroupon?template=bbgmall">我的拼团</a></li>-->
+    <!--</ul>-->
+    <!--<ul class="list border-v">-->
+      <!--<li class="item"><a class="list-icon" href="/greencoin/index?template=bbgmall">我的绿币</a></li>-->
+      <!--<li class="item"><a class="list-icon" href="/dailyTask/tasksAchievementInfo">每日任务</a></li>-->
+    <!--</ul>-->
+    <!--<ul class="list border-v ">-->
+      <!--<li class="item"><a class="list-icon" href="/user/mycircle?template=bbgmall">我的圈子</a></li></li>-->
+      <!--<li class="item"><a class="list-icon" href="/giftcard/myGiftCard?template=bbgmall">礼品卡</a></li>-->
+      <!--<li class="item"><a class="list-icon" href="/coupon/myCouponList?template=bbgmall">优惠券</a></li>-->
+      <!--<li class="item"><a class="list-icon" href="/rechargeCard/index?template=bbgmall">我的钱包</a></li>-->
+    <!--</ul>-->
+    <ul class="list border-v last">
+      <li class="item"><a class="list-icon" href="/address/queryAddress?source=center&template=bbgmall">地址管理</a></li>
+      <li class="item"><a class="list-icon" href="/safe/index?template=bbgmall">安全设置</a></li>
+      <li class="item"><a class="list-icon" href="/user/comment?template=bbgmall">我的评论</a></li>
+    </ul>
+  </div>
+  <!--列表 END-->
+</div>
+<!--content END-->
+
+<!--底部选项卡-->
+<footer class="bottom-fix flex bottom-tab " id="bottom-bar">
+    <a class="cell bottom-item" href="/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">首页</p>
+    </a>
+    <a class="cell bottom-item" href="/goods/sort?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">分类</p>
+    </a>
+    <!--<a class="cell bottom-item" href="/activity/group?template=bbgmall">-->
+        <!--<span class="bottom-icon"></span>-->
+        <!--<p class="bottom-name">团购</p>-->
+    <!--</a>-->
+    <a class="cell bottom-item" href="/cart/index?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <i class="" id="goods-cart-count"></i>
+        <p class="bottom-name">购物车</p>
+    </a>
+    <a class="cell bottom-item" href="/user/center?template=bbgmall">
+        <span class="bottom-icon"></span>
+        <p class="bottom-name">我的</p>
+    </a>
+</footer>
+
+<script>
+    var $bottomBar = $('#bottom-bar'),
+        $bottomName = $bottomBar.find('p');
+    //判断在那一页
+    if (window.location.pathname == '/index') {
+        $bottomBar.find('a').eq(0).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/goods/sort') {
+        $bottomBar.find('a').eq(1).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/activity/group') {
+        $bottomBar.find('a').eq(2).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/cart/index') {
+        $bottomBar.find('a').eq(3).addClass('active').siblings().removeClass('active');
+    } else if (window.location.pathname == '/user/center') {
+        $bottomBar.find('a').eq(4).addClass('active').siblings().removeClass('active');
+    }
+    $.ajax({
+        url: '/bottomBar',
+        type: 'get',
+        dataType: 'json',
+        success: function(res) {
+            console.log(res);
+            if (res.code == 0 && typeof res.obj == 'object') {
+                var data = res.obj;
+                var aColor = data.color.split(',');
+                var name = data.name.split(',');
+                var cssText = '.bottom-tab{opacity: 1;}'
+                            + '.bottom-item .bottom-icon{background-image: url(' + data.normalSizeIcon + ');}'
+                            + '.bottom-item{color: ' + aColor[0] + ';}'
+                            + '.bottom-item.active{color: ' + aColor[1] + ';}';
+                loadStyleString(cssText);
+                for (var i = 0; i < name.length; i++) {
+                    $bottomName.eq(i).html(name[i]);
+                }
+            } else {
+                loadStyleString('.bottom-tab{opacity: 1;}');
+                console.log(res.message);
+            }
+        },
+        error: function(res) {
+            loadStyleString('.bottom-tab{opacity: 1;}');
+            console.log(res.responseText);
+        }
+    });
+</script>
+
+<!--弹窗-->
+<div class="cover"></div>
+<div class="popup warning">
+  <p></p>
+  <div class="btn border-top">确定</div>
+</div>
+
+
+<script>
+  //请求各种订单
+  var findOdrder = function(begType,status) {
+    if(null==begType || ''==begType){
+      begType=1;
+    }
+    var template = $("#template").val();
+    if(template!=null){
+      location.href="/order/findFrontOrders?begType="+begType+"&orderStatus="+status+"&template="+template;
+    }else{
+      location.href="/order/findFrontOrders?begType="+begType+"&orderStatus="+status;
+    }
+  };
+
+  sessionStorage.removeItem('myOrderDetail');
+  //返回首页
+  if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    var goToIndex = setInterval(function() {
+      if (location.href.indexOf('/order/createOrder') > 0) {
+        clearInterval(goToIndex);
+        sessionStorage.removeItem('fromOrderSuccessToPersonal');
+        location.href = '/index?template=bbgmall';
+      }
+    }, 300);
+  } else {
+    window.addEventListener("popstate", function(e) {
+      if (sessionStorage.toIndex == 1) {
+        sessionStorage.removeItem('fromOrderSuccessToPersonal');
+        sessionStorage.removeItem('toIndex');
+        location.href = '/index?template=' + template.value;
+      }
+    }, false);
+  }
+
+  //关闭推广
+  if (sessionStorage.getItem('personalPromotionRemove') == 'true') {$('#promotion').hide();}
+  $('#promotion').on('touchstart mousedown', '.promotion-remove', function() {
+    sessionStorage.setItem('personalPromotionRemove', 'true');
+    $(this).parent().slideUp(300);
+  })
+  .on('click', '.promotion-remove', function(e) {
+    e.preventDefault();
+  });
+</script>
+</body>
+
+</html>

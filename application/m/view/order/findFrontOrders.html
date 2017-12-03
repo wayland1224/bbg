@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>
+			全部订单
+</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/order-myorder.css?v=201709071500">
+</head>
+
+<body class="bg-ee">
+<!--隐藏值 begin-->
+<input type="hidden" id="template" value="bbgmall"/>
+<input type="hidden" id="beg_type" value="1">
+<input type="hidden" id="order_status" value="0">
+<input type="hidden" id="user_type" value="3"/>
+<input type="hidden" id="pageCount" value="1"/>
+<!--隐藏值end-->
+
+<!--content-->
+<div class="content">
+  <!--search START-->
+  <header >
+    <div class="search p-rel">
+      <input class="search-txt" type="search" />
+      <button class="search-btn p-abs"></button>
+      <span class="search-span">搜索所有订单</span>
+    </div>
+  </header>
+  <!--search END-->
+
+  <!--订单为空-->
+    <div class="myorder-empty all">
+      <p><i></i><i></i></p>
+      <p>目前还没有相关订单</p>
+    </div>
+
+  <!--订单-->
+  <div class="main">
+    <ul class="ul-orderlist">
+      <li>
+        <div class="title">
+          <a class="but_back">
+                轩妈蛋黄酥
+          </a>
+          <span class="tip">
+  				 交易关闭
+          </span>
+        </div>
+        <ul>
+          <li class="goods_list">
+            <a href="javascript:goDetail(19055);">
+              <div class="goods_detail clear">
+                <img class="fl-l" src="http://image.wb1688.com/1511339901886.jpg?imageView2/1/w/192/h/192">
+                <div class="goods_des">
+                  <p class="goods_name line-clamp"><span>美味轩妈蛋黄酥</span></p>
+                  <p class="sku_des">
+                  </p>
+                  <p class="sku_price"><em class="yuan">&#165;</em><span>45.00</span><span class="count">×<span>1</span></span></p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <p class="order_obj">
+  		共<span>1</span>件商品&nbsp;&nbsp;合计：<em class="yuan">&#165;</em><span><strong class="total_price">45.00</strong>&nbsp;(</span>含运费<em class="yuan">&#165;</em><span>0.00</span>)
+        </p>
+        <p class="but_handle">
+          <a href="javascript:setOrderStatus(19055,'isRemove',1)">删除订单</a>
+        </p>
+      </li>
+    </ul>
+
+
+
+    <div class="foot-tips">
+      <i class="line"></i>没有更多了哦<i class="line"></i>
+    </div>
+
+  </div>
+</div>
+
+<!--返回顶部-->
+<div class="backToTop no-foot"><img src="/m/img/icon-top.png"></div>
+
+
+  <!--确认订单弹窗-->
+  <div class="cover"></div>
+  <div class="confirmation pop clear">
+    <img class="close" src="/m/img/icon-close_62.png">
+    <p>您已成功确认收货！</p>
+    <a class="fl-l" href="">订单详情</a>
+    <a class="fl-r" href="">立即评价</a>
+  </div>
+
+  <script>
+    var confirmReceiptFlag = false,
+        confirmReceiptIdx;
+    $(function() {
+      $('.main').on('click', '.confirmReceipt', function() {
+        confirmReceiptIdx = $(this).parents('.ul-orderlist');
+        confirmReceiptFlag = true;
+      });
+
+      $('.pop').on('click', '.close', function() {
+        $('.cover').hide();
+        $('.pop').hide();
+        //删除当前已确认收货订单
+        if(confirmReceiptFlag) {
+          confirmReceiptIdx.remove();
+          confirmReceiptFlag = false;
+          //检查订单列表
+          if($('.ul-orderlist').length == 0) {
+            $('header').addClass('p-abs');
+            $('.main').hide();
+            $('.myorder-empty').show();
+          }
+        }
+      });
+    });
+  </script>
+
+
+<script src="/m/js/order/myorder.js?v=201705251800"></script>
+<script src="/m/js/order/myorder-all.js?v=201705251700"></script>
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

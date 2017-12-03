@@ -1,0 +1,24 @@
+@charset "utf-8";
+body.f1{background: #f1f1f1;}
+header{padding-top: 4rem; text-align: center;}
+header.success{padding: 3.1rem 0 3rem;}
+header.success img{width: 8rem; height: 8rem;}
+header.success p{padding-top: 1.5rem; font-size: 2rem;}
+header img{width: 28%;}
+header p{padding-top: 2rem; font-size: 1.6rem; line-height: 2rem;}
+.pay_list{margin: 2rem 1.6rem; background: #fff; border: .1rem solid #eee; border-radius: .5rem;}
+.pay_list li{position: relative; white-space: nowrap; font-size: 0; -webkit-text-size-adjust: 100%;}
+.pay_list span{display: inline-block; padding-left: 1rem; padding-right: .5rem; font-size: 1.4rem; line-height: 3.5rem;}
+.pay_list span:nth-of-type(odd){width: 13rem; text-align: right;}
+.pay_list [class*=border].border-center:before{margin: 0;}
+.pay_list .red{color: #f00;}
+.pay_info{padding: 2rem; line-height: 2.5rem;}
+.pay_tips{margin: 0 1.6rem; padding: 1rem; line-height: 2.5rem; border-top: .1rem dashed #ccc; border-bottom: .1rem dashed #ccc;}
+.pay_tips p:nth-of-type(2){color: #a8a8a8;}
+.mes{padding: 2.7rem 1.6rem;}
+.mes p{padding-bottom: 2rem; line-height: 2.4rem;}
+.mes a{display: inline-block; width: 46%; font-size: 1.8rem; line-height: 3.4rem; border: .1rem solid #ccc; border-radius: .5rem; text-align: center;}
+.safety-tips{padding: 1rem 1.6rem 0 3.7rem; line-height: 2.4rem; color: #a8a8a8; background: url(../img/icon-safety-tips.png) no-repeat 1.6rem 1.5rem; background-size: 1.3rem 1.3rem;}
+.safety-tips:after{background: #ccc;}
+.safety-tips a{color: #a8a8a8;}
+footer{position: absolute; z-index: 100; bottom: 1rem; left: 0; right: 0; font-size: 1.6rem; line-height: 5rem; text-align: center; letter-spacing: .1rem; color: #fff; background: #f9cd02;}

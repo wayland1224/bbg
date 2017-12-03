@@ -20,7 +20,7 @@ $(function() {
 $(function() {
 
   //减少加入购物车商品数量
-  $('.numReduce').on('touchstart mousedown', function() {
+  $('.numReduce').on('click', function() {
     var numBuy = $('.numBuy').val();
     //购买数量必须是正整数
     var type = /^[0-9]*[1-9][0-9]*$/;
@@ -35,7 +35,7 @@ $(function() {
   });
 
   //增加加入购物车商品数量
-  $('.numAdd').on('touchstart mousedown', function() {
+  $('.numAdd').on('click', function() {
     var quantity = $('#quantity').val();
     var numBuy = $('.numBuy').val();
 
@@ -96,7 +96,7 @@ $(function() {
   });
 
   // 点击加入购物车
-  $("#add-cart-btn").on('touchstart mousedown', function() {
+  $("#add-cart-btn").on('click', function() {
     if (!checkAddCart()) return;
 
     var goodsId = $('.goods_id').val(),
@@ -156,7 +156,7 @@ $(function() {
   });
 
   // 点击立即购买
-  $("#buy-btn").on('touchstart mousedown', function() {
+  $("#buy-btn").on('click', function() {window.location.href = "/order/buynow?";return;
     //判断是否注册绑定手机号
     if (!isRegister()) return;
 

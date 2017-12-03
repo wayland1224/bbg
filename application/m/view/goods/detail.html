@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta content="telephone=no" name="format-detection">
+  <title>商品详情</title>
+  <link rel="stylesheet" href="/m/css/common/base.css?v=201709011000">
+  <link rel="stylesheet" href="/m/css/common/common.css?v=201709121100">
+  <script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+  <script src="/m/libs/jquery-2.1.1.min.js"></script>
+  <script src="/m/js/common/common.js?v=201709111800"></script>
+  <script src="/m/js/common/main.js?v=201707281400"></script>
+  <link rel="stylesheet" href="/m/css/swiper.min.css">
+  <link rel="stylesheet" href="/m/css/goods-detail.css?v=201709131100">
+  <link rel="stylesheet" href="/m/css/group-detail-new.css?v=201709121100">
+  <link rel="stylesheet" href="/m/css/ImageView.css?v=201611071435">
+  <style>
+  .numBuy{-webkit-appearance:none;}
+  .detailImg .lazyload, .detailImg .lazyloading{opacity:1; background: none;}
+  </style>
+  <script src="/m/js/zepto.js?v=201608051534"></script>
+</head>
+
+<body class="bg-ee">
+<div class="content has-foot">
+  <!--轮播图 START-->
+  <div class="swiper-container scroll-banner">
+    <ul class="swiper-wrapper picServerImg">
+        <li class="swiper-slide" data-num="P1"><img src="http://image.wb1688.com/1510813190085.jpg"></li>
+        <li class="swiper-slide" data-num="P2"><img src="http://image.wb1688.com/1511419971346.jpg"></li>
+        <li class="swiper-slide" data-num="P4"><img src="http://image.wb1688.com/1510813204978.jpg"></li>
+        <li class="swiper-slide" data-num="P5"><img src="http://image.wb1688.com/1510813199769.jpg"></li>
+    </ul>
+    <p class="swiper-pagination"></p>
+    <!--图片弹窗 START-->
+    <div id="picServerImgHd" style="display:none;">
+        <img src="http://image.wb1688.com/1510813190085.jpg" data-num="P1">
+        <img src="http://image.wb1688.com/1511419971346.jpg" data-num="P2">
+        <img src="http://image.wb1688.com/1510813204978.jpg" data-num="P4">
+        <img src="http://image.wb1688.com/1510813199769.jpg" data-num="P5">
+    </div>
+    <!--图片弹窗 END-->
+  </div>
+  <!--轮播图 END-->
+
+  <!--goods-title START-->
+  <section class="goods-title ovh">
+    <h2 class="ellipsis">湖南怀化洪江冰糖橙子</h2>
+    <p class="ellipsis">甜若冰糖的橙子，新鲜直发</p>
+    <h4 class="price groupBuyPrice">
+    			<em class="yuan">&#165;</em>58.00
+    </h4>
+  </section>
+  <!--goods-title END-->
+
+  <!--goods-info START-->
+  <dl class="goods-info">
+    <dd class="msg flex">
+      <p class="cell sale-volume">销量：3032</p>
+      <p class="cell">包邮</p>
+      <p class="cell">湖南怀化</p>
+    </dd>
+
+    <!--最低价 START-->
+    <div class="lowest-price" id="lowest-price">
+
+      <ul class="ovh group-purchase">
+
+      </ul>
+    </div>
+    <!--最低价 END-->
+
+    <!--sku START-->
+  			<dd class="ovh spec">
+  				<input type="hidden" id="sku1Name" value="规格"/>
+                <span class="fl">规格:</span>
+    				    <ul class="ovh sku1">
+    				      		<li>8斤精选大果</li>
+    				      		<li>10斤中果</li>
+    				    </ul>
+  						 <input type="hidden" id="sku2Name" value=""/>
+  			</dd>
+    <!--sku END-->
+
+    <dd class="flex amount">
+      <span class="left">选择数量：</span>
+      <div class="clear">
+  	    <button class="num-minus numReduce"></button>
+  	    <input class="numBuy" type="text" min="1" value="1" maxlength="5">
+  	    <button class="num-add numAdd"></button>
+  	  </div>
+      <span class="right quantity"></span>
+    </dd>
+  </dl>
+  <!--goods-info END-->
+
+  <!--商品详情 START-->
+  <div class="goods-detail">
+      <dl>
+        <dd>
+          <div class="clear">
+            <span>品名</span>
+            <p>怀化冰糖橙</p>
+          </div>
+        </dd>
+        <dd>
+          <div class="clear">
+            <span>重量</span>
+            <p>8斤（净果约重7.6-7.8斤），10斤（净果约重9.6-9.8斤）</p>
+          </div>
+        </dd>
+        <dd>
+          <div class="clear">
+            <span>规格</span>
+            <p>果径55MM~65MM/10斤果约55个，8斤果精装约30个</p>
+          </div>
+        </dd>
+        <dd>
+          <div class="clear">
+            <span>产地</span>
+            <p>湖南怀化</p>
+          </div>
+        </dd>
+        <dd>
+          <div class="clear">
+            <span>温馨提示</span>
+            <p>8斤装为人工精选大果，10斤装混搭果，虽规格不同，但品质一样。</p>
+          </div>
+        </dd>
+      </dl>
+
+    <!--图片-->
+    <ul class="detailImg" id="ume-img">
+      <li>
+  					<p><img src="http://image.wb1688.com/1510813225845.jpg" _src="http://image.wb1688.com/1510813225845.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813227589.jpg" _src="http://image.wb1688.com/1510813227589.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813229313.jpg" _src="http://image.wb1688.com/1510813229313.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813231042.jpg" _src="http://image.wb1688.com/1510813231042.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813233096.jpg" _src="http://image.wb1688.com/1510813233096.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813238905.jpg" _src="http://image.wb1688.com/1510813238905.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813240687.jpg" _src="http://image.wb1688.com/1510813240687.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813242633.jpg" _src="http://image.wb1688.com/1510813242633.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813244876.jpg" _src="http://image.wb1688.com/1510813244876.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813246697.jpg" _src="http://image.wb1688.com/1510813246697.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813248830.jpg" _src="http://image.wb1688.com/1510813248830.jpg" style=""/></p><p><img src="http://image.wb1688.com/1510813252042.jpg" _src="http://image.wb1688.com/1510813252042.jpg" style=""/></p><p><br/></p>
+      </li>
+    </ul>
+
+  </div>
+  <!--商品详情 END-->
+
+  <!-- 推荐商品 START-->
+  <div class="recommended">
+    <h2><i></i><span>其他伙伴还买了</span><i></i></h2>
+    <ul class="goods-list">
+      <!-- 热推商品 -->
+          <li class="item">
+            <a href="/goods/detail/3171?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483411328677.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">云南楚雄大姚薄皮核桃1000g</h6>
+              <p class="line-clamp">500g*2包 2017年新货干核桃</p>
+              <p class="price"><em class="yuan">&#165;</em><span>56.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/4158?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1509437588207.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">临安 零食坚果 山核桃</h6>
+              <p class="line-clamp"></p>
+              <p class="price"><em class="yuan">&#165;</em><span>29.90</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3195?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483185883256.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">正宗赣南脐橙（顺丰）</h6>
+              <p class="line-clamp">果肉细嫩 饱满透亮</p>
+              <p class="price"><em class="yuan">&#165;</em><span>48.80</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3225?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1510555762556.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">广西正宗融安滑皮金桔</h6>
+              <p class="line-clamp">现摘新鲜直发，脆甜爽口</p>
+              <p class="price"><em class="yuan">&#165;</em><span>36.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/4184?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1510023655759.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">有机黑白配芝麻精选瓶装350g*2</h6>
+              <p class="line-clamp"></p>
+              <p class="price"><em class="yuan">&#165;</em><span>58.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/4188?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1510278039802.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">汇滋润 原味阿胶糕</h6>
+              <p class="line-clamp">气血双补不上火</p>
+              <p class="price"><em class="yuan">&#165;</em><span>358.00</span></p>
+            </a>
+          </li>
+      <!-- 相似商品 -->
+      <!-- 历史浏览 -->
+          <li class="item">
+            <a href="/goods/detail/3134?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483495615470.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">福建漳浦六鳌红薯</h6>
+              <p class="line-clamp">简装5斤 软糯香甜 无公害 特有沙质土壤种植</p>
+              <p class="price"><em class="yuan">&#165;</em><span>36.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3165?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483279166509.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">正宗眉县徐香绿心猕猴桃</h6>
+              <p class="line-clamp">5斤24枚 入口软甜 富含维C</p>
+              <p class="price"><em class="yuan">&#165;</em><span>55.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3976?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1504491889462.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">平和琯溪蜜柚 2个/5斤</h6>
+              <p class="line-clamp">味道酸甜，略带苦味，含有丰富的维生素C</p>
+              <p class="price"><em class="yuan">&#165;</em><span>29.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3998?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1504691542447.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">蒙自甜石榴 果园现摘现发</h6>
+              <p class="line-clamp">籽粒饱满 鲜甜多汁</p>
+              <p class="price"><em class="yuan">&#165;</em><span>56.90</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3040?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483186494842.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">正宗阳澄湖大闸蟹 398型蟹券礼卡</h6>
+              <p class="line-clamp">公3.0-3.2两 母2.0-2.2两/6只装</p>
+              <p class="price"><em class="yuan">&#165;</em><span>398.00</span></p>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/goods/detail/3247?template=bbgmall">
+              <img class="lazyload" src="/m/img/transparent.png" data-src="http://image.wb1688.com/1483185420608.jpg?imageView2/1/w/344/h/288">
+              <h6 class="ellipsis">正宗兰州鲜百合</h6>
+              <p class="line-clamp"> 香甜软糯，新鲜百合</p>
+              <p class="price"><em class="yuan">&#165;</em><span>48.80</span></p>
+            </a>
+          </li>
+    </ul>
+  </div>
+  <!-- 推荐商品 END-->
+
+  <!--商品评论 START-->
+  <div class="goods-reviews">
+    <h2>商品评论(430)</h2>
+    <ul class="reviews-list">
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/k0orkm0l0j7JcfxhkicIB9mJx4C9gLoQerqicNUkfndrOyTzHibHg1dESknvLsM88JP5zBLt2CvFnnLUSQN6G0TLQ/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">骊：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info"></p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-12-03 11:36:15</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/k0orkm0l0j7JcfxhkicIB9mJx4C9gLoQerqicNUkfndrOyTzHibHg1dESknvLsM88JP5zBLt2CvFnnLUSQN6G0TLQ/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">骊：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">8斤一盒的也蛮好吃的</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-12-03 11:36:07</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/k0orkm0l0j7JcfxhkicIB9mJx4C9gLoQerqicNUkfndrOyTzHibHg1dESknvLsM88JP5zBLt2CvFnnLUSQN6G0TLQ/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">骊：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-12-03 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/4qjnbaIfsibSIFSLrk8IoNdDb8m00a29y3fibpEAKxQEMTeeTh2Hiabp6yM7IGLvDCAk4NTv06gqEdrPKNCgyA7WQ/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">田***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">老妈喜欢，又买了好几件</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-12-01 13:02:44</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/6DpBonqybURlX32ibV9ibWReCbKTFyA9531TdqncdlceZp9Hm4ZuFmMXMZ3crl3hibwYPrzkibdpW10URns0IWV0XA/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">甘***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">不错，完好</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-12-01 12:16:08</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/ib70thJLA1yGg9Xu0TjTgS4uQOJjf6nj0Co9Uo1CicMeflW419AgSH8XvicJFiciaqny39xsIOahefCSP2aa70rLOrA/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">丁***刀：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info"></p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-11-30 12:49:12</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCPQVBpIS4wgibYEhJpt8jkfW1xbJHiahniadYVHiaJlQjicmt9UOhN0IzickstIFjkOaIkdSVy4WPFw1YQ/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">L***ʔ：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJJvDcbQVL7hdQ1n3zWqrgYYRTPruFTfQ9mHHOeMkiaY1uSXJsXLN7sUyyzwwoD6URJqrhGj55j7Kw/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">阿***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKPJcJ0pClLqwkpgTGOjAPcgKsCibVBnmV0RKPJic86TxhnXaWpHsUhjGjDZXRMzRHI6ibibVfeGicGEpw/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">林***红：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLGPo7sGm8WJWlqp38zJuwxvmX5OQ9q00f5qDicuKhX7qkNI6xgOHkSMktHKdBq0GiaGWpGnF3XicRnA/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">王***铭：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJXSV5znG9um0TXmuTXh2KURrDvto56Ib7zDuJ5ywmwCgJGWicD0RjyAVuibkoTStTezzCwL7Mgn4Sw/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">福***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/iaRlzG8zy7Bt0XCicUxWR5ggtOdjfGUEpBwNvSOxRsSPRTZibgDoyLEKfWs4cr3GIIKvp2m75ibqDoWzhgmLmFKP0qJS8nY8Oa1D/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">花***径：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIvZfJ2LyiaJy2TvyneL2Mib8Tw7uMw8MPIF0Fe45iaaFmf5zaspmUhbctHvowTXy9nc8nVUBeamejRA/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">有***好：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/emXhd3CHHBcl0sNLMP14M1X9wkKf4RPJNB0icZiaFHcrbRG7QKTNJ7SiaNpoILpdbYHicpROb5cibHQ9G1J9PzBkN8A/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">喻***毅：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Cgy1uXSJV14QOUGqFG7QribXoicic4pg7DXtqibIbVLJYSIVr7uRmg2Au6DZ3icYUrgppibDlf2FxF6hyGcDlakicdC0g/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">顽***鹤：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/eBIwf8E7BAeb7KHt1bOd1mM8CHbz63bmnK9bnzzfaTH4CdD48nGvFJ8Q8XMqNWXFu4hvnBRobsSxNevVfCCzbtYhOxef4suib/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">霸***姬：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/eBIwf8E7BAdPE7kF8XsI9YtImOyXhXqIZXBCHcNuGmtm8vf4uDjfsibN0iblWPeNDze2J1eFO3ZgVxC4QicFAibs5UycyRVHQd3y/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">✨***✨：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/NjAE8Pr2MzicDnMG2iaRBhICJImpVQUYzzHeVPhfCibswOTapMUWxjYtdKSaXgPFgwgRZj1icTW5V6mVQhDxFSwTqw/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">江***雪：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKibZoW5ibfu8KlkOZf7iaQauYnTD2KiblhaKA3uuaylEmyqLqDq71zLZlldSE4jgsiaaRwgGBiagY0qGtw/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">鱼***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  	    <li class="item clear">
+  	      <a class="customer-avatar" href="">
+  		      	<img class="lazyload" src="/m/img/transparent.png" data-src="http://wx.qlogo.cn/mmopen/vi_32/GJSW39CWrlDXXleyajDj5MrBRRkg4xZicxjZYODr78YcvfsULOghibPgolxM1TffgXzvEZUL4KLQsLHCJ7QH7Ifg/64">
+  	      </a>
+  	      <section>
+  	        <div class="customer-name clear">
+  	          <span class="fl">军***：</span>
+  					<span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span><span class="icon icon-select"></span>
+  	        </div>
+  	        <p class="info">此用户没有填写评论！</p>
+
+  			<p class="see">查看全文</p>
+  	        <p class="time">2017-10-24 04:31:01</p>
+  	      </section>
+  	    </li>
+  		<div class="load-more">
+  				<input class="page1" type="hidden" value="1"/>
+  				<input class="pageSize1" type="hidden" value="20"/>
+  				<input class="total1" type="hidden" value="430"/>
+  			<span>加载更多…</span>
+  		</div>
+    </ul>
+  </div>
+  <!--商品评论 END-->
+
+  <div class="foot-tips">
+    <i class="line"></i>没有更多了哦<i class="line"></i>
+  </div>
+</div>
+
+<!--购买-->
+<footer class="bottom-fix">
+  <a href="/index?template=bbgmall">首页</a>
+  <a class="service" href="javascript:;">客服</a>
+  <span class="buy-btn theme-bg" id="buy-btn">
+    <p class="price"><em class="yuan">&#165;</em>39.9</p>
+    <p>立即购买</p>
+    <p>单独购买</p>
+  </span>
+  <span class="add-cart-btn" id="add-cart-btn">
+    <p class="price"><em class="yuan">&#165;</em>39.9</p>
+    <p>加入购物车</p>
+  </span>
+ </footer>
+
+<!--客服弹窗-->
+<div class="cover"></div>
+<div class="service-pop"><img src="/m/img/service.jpg"></div>
+
+<!--加入购物车-->
+<div class="backToTop"><img src="/m/img/icon-top.png"></div>
+<div class="addCart" id="add-cart">
+  <h4 class="p-rel">成功加入购物车<span class="hidePopup"></span></h4>
+  <ul class="list">
+    <li>
+      <p class="list_cover"><img src=""></p>
+      <p class="remark">您以普通价格购买了</p>
+      <p class="list_title line-clamp"></p>
+      <p class="cartCount">加入数量：1</p>
+      <p class="totalMoney">总计金额：<em class="yuan">&#165;</em>99.00</p>
+    </li>
+  </ul>
+ 
+  <p class="tips">进入商品页，有更多优惠哦</p>
+  <div class="btn flex">
+    <a class="goodsDetail cell" href="">参加活动</a>
+    <input class="continueBuy hidePopup cell" type="button" value="继续购物">
+    <input class="goBuy hidePopup cell" type="button" value="去结算">
+  </div>
+</div>
+
+<!--隐藏域的值-->
+<div>
+	<input class="source" name="source" type="hidden" value="0"/>
+	<!-- 商品ID-->
+	<input class="goods_id" name="goods_id" type="hidden" value="3217"/>
+	<!--团购价-->
+		<input class="group_buy_price" name="group_buy_price" type="hidden" value="58"/>
+	<!--商超价-->
+		<input class="shop_market_price" name="shop_market_price" type="hidden" value="88"/>
+	<!--出厂价-->
+		<input class="ex_factory_price" name="ex_factory_price" type="hidden" value="40"/>
+	<!--销量-->
+		<input class="sales_num" name="sales_num" type="hidden" value="3032"/>
+
+	<!--库存-->
+	<input id="quantity" name="quantity" type="hidden" value=""/>
+	<!-- 商品类型-->
+	<!-- 商品名称-->
+		<input class="goodsName" name="goodsName" type="hidden" value="湖南怀化洪江冰糖橙子"/>
+	<!-- 商品图片-->
+		<input class="picServerUrl1" name="picServerUrl1" type="hidden" value="http://image.wb1688.com/1510813190085.jpg"/>
+	<!-- 店铺ID-->
+		<input class="store_id" name="store_id" type="hidden" value="14348"/>
+
+	<!-- 店铺名称-->
+		<input class="store_name" name="store_name" type="hidden" value="怀化冰糖橙果园"/>
+
+	<!-- 发货商用户id-->
+		<input class="fh_user_id" name="fh_user_id" type="hidden" value="14356"/>
+
+	<!-- 店铺用户id-->
+		<input class="store_user_id" name="store_user_id" type="hidden" value="14356"/>
+
+	<!-- 用户类型-->
+		<input class="userType" name="userType" type="hidden" value="1"/>
+	<!-- SKU商品ID-->
+	<!-- SKU商品ID-->
+	<input class="sku_id" name="sku_id" type="hidden" value=""/>
+
+	<!-- 第一组SKU属性名称-->
+	<input class="sku1Name" name="sku1Name" type="hidden" value=""/>
+
+	<!-- 第一组SKU属性值-->
+	<input class="sku1Value" name="sku1Value" type="hidden" value=""/>
+
+	<!-- 第二组SKU属性名称-->
+	<input class="sku2Name" name="sku2Name" type="hidden" value=""/>
+
+	<!-- 第二组SKU属性值-->
+	<input class="sku2Value" name="sku2Value" type="hidden" value=""/>
+
+	<!-- 微信用户类型-->
+	<input class="wechatUserType" name="wechatUserType" type="hidden" value="3"/>
+
+	<!-- 微信用户id-->
+	<input class="wechatUserId" name="wechatUserId" type="hidden" value="19591"/>
+
+	<!-- 微信用户店铺id-->
+	<input class="wechatStoreId" name="wechatStoreId" type="hidden" value="19571"/>
+
+	<!-- 是否显示出厂价-->
+	<input class="isShowExfactoryPrice" name="isShowExfactoryPrice" type="hidden" value="0"/>
+	<input type="hidden" id="noLoadMore" value="0"/>
+	<input type="hidden" id="title" value="&#165;58.00 湖南怀化洪江冰糖橙子"/>
+	<input type="hidden" id="imgUrl" value="http://image.wb1688.com/1510813190085.jpg"/>
+	<input type="hidden" id="link" value="http://mall.wb1688.com/goods/detail/3217/?storeId=14348&user_id=19591&template=bbgmall"/>
+	<input type="hidden" id="appId" value="5"/>
+	<input type="hidden" id="wechatServerUrl" value="https://mishanwx.wb1688.com/"/>
+	<input type="hidden" id="template" value="bbgmall"/>
+</div>
+
+<script>
+  $(function(){
+    $(window).scrollTop(10);
+    $(window).scrollTop(0);
+  });
+  var umeImgs = $('#ume-img').find('img');
+  umeImgs.addClass('lazyload');
+  for (var i = 0; i < umeImgs.length; i++) {
+    var imgUrl = umeImgs.eq(i).attr('src');
+    umeImgs.eq(i).attr('src', '/m/img/watermark-detail.png');
+    umeImgs.eq(i).attr('data-src', imgUrl);
+  }
+</script>
+<script src="/m/js/share/initShare.js?v=201706291059"></script>
+<script src="/m/libs/lazysizes.min.js"></script>
+<script src="/m/libs/jquery-countDown.js"></script>
+<script src="/m/libs/swiper.min.js"></script>
+<script src="/m/js/goods/addCart.js?v=201710311000"></script>
+<script src="/m/js/goods-detail.js?v=201708231200"></script>
+<script src="/m/js/goods/detail.js?v=201711061300"></script>
+<!-- 图片弹窗 START-->
+<script src="/m/js/ImageView.js?v=201704211101"></script>
+<script type="text/javascript">
+	$(function(){
+		/* 滚动图 */
+		var imgSrc=[],imgNum=[],snum,idx;
+		for(var i=0,l=$("#picServerImgHd img").length;i<l;i++){
+			imgSrc.push($("#picServerImgHd img").eq(i).attr("src"));
+			imgNum.push($("#picServerImgHd img").eq(i).attr("data-num"));
+		}
+		$(".picServerImg li").click(function(){
+			snum=$(this).attr("data-num");
+			idx=imgNum.indexOf(snum);
+			ImageView(idx,imgSrc);
+		})
+		/* 滚动图end */
+
+		/* 详情图 */
+
+		var imgDetailSrc=[],imgDetailNum=[],snum_detail,idx_detail;
+		for(var i=0,l=$(".detailImg img").length;i<l;i++){
+			imgDetailSrc.push($(".detailImg img").eq(i).attr("src"));
+			$(".detailImg img").eq(i).attr("data-num","D"+i);
+			imgDetailNum.push("D"+i);
+		}
+
+		$(".detailImg img").click(function(){
+			snum_detail=$(this).attr("data-num");
+			idx_detail=imgDetailNum.indexOf(snum_detail);
+			ImageView(idx_detail,imgDetailSrc);
+		})
+		/* 详情图end */
+
+		/* 评价图 */
+		var imgRateSrc=[],imgRateNum=[],snum_rate,idx_rate;
+		for(var i=0,l=$(".img-list img").length;i<l;i++){
+			imgRateSrc.push($(".img-list img").eq(i).attr("data-src"));
+			$(".img-list img").eq(i).attr("data-num","R"+i);
+			imgRateNum.push("R"+i);
+		}
+
+		$(".img-list img").click(function(){
+			snum_rate=$(this).attr("data-num");
+			idx_rate=imgRateNum.indexOf(snum_rate);
+			ImageView(idx_rate,imgRateSrc);
+		})
+		/* 评价图end */
+
+    /*有活动列表时购物车样式*/ 
+    if ($('#source').val() == 'index') {
+      if ($('.group-purchase li').length) {
+        $('.remark,.tips,.goodsDetail.cell').css('display','block');
+        $('.goBuy.hidePopup.cell').css('margin',0);
+        $('.continueBuy.hidePopup.cell').css('margin-left','10px');
+      }else{
+        $('.remark,.tips,.goodsDetail.cell').css('display','none');
+        $('.goBuy.hidePopup.cell').css('margin-left','10px');
+        $('.continueBuy.hidePopup.cell').css('margin-left','0');
+        $('.continueBuy.hidePopup.cell').css('display','block');
+      }
+    }
+    
+	});
+</script>
+<!-- 图片弹窗 END-->
+
+<div style="display:none">
+	<script type="text/javascript">
+	
+		var path=window.location.host;
+		
+		if(path=="mall.wangbang.cc"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260118371'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260118371' type='text/javascript'%3E%3C/script%3E"));
+		}
+		else if(path=="mall.wb1688.com"){
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260105557'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1260105557' type='text/javascript'%3E%3C/script%3E"));
+		}
+	
+	</script>
+</div></body>
+
+</html>

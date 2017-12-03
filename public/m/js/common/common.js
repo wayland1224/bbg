@@ -147,7 +147,7 @@ function changeGoodsCartNum() {
 }
 
 // 判断当前用户是否注册（新用户）
-function isRegister() {
+function isRegister() {return true;
   if (sessionStorage.getItem('isRegister') == 'true') return true;
   var flag;
   $.ajax({

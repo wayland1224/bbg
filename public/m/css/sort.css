@@ -18,6 +18,15 @@
 /*~~~~~~ 分类首页 END ~~~~~~*/
 /*~~~~~~ 分类列表页 START ~~~~~~*/
 /*banner*/
+
+[v-cloak] {
+  display: none;
+}
+.mind-none{height:36px;line-height: 36px;text-align: center;color: #666;font-size: 12px;}
+.mind-none img{width:50%;}
+.no-date{text-align: center;margin-top:130px;}
+.no-date img{width: 50%;}
+.no-date p{font-size:14px;color:#999;text-align:center;margin-top:20px;}
 .banner img {display:block;width:100%;height:46.8vw;max-height:30rem;}
 /*nav*/
 nav {padding: 1.3rem 0;text-align:center;color:#d0d0d0;background-color:#fff;}
@@ -31,6 +40,12 @@ nav .active {color:#e6bd00;}
 nav .active .text {margin-left:-1.3rem;}
 nav .active .icon-price {background-image:url(../img/sort-nav-1-active.png);}
 nav .active.reverse .icon-price {background-image:url(../img/sort-nav-2-active.png);}
+
+/* .pricelow{background-image:url(../img/sort-nav-1-active.png)}
+.priceup{background-image:url(../img/sort-nav-2-active.png)}
+ */
+
+.specail{position: absolute;width: 4.5rem;height:4.7rem !important;left:0px;top:0px;}
 nav .active .icon-sales {background-image:url(../img/sort-nav-3-active.png);}
 /*商品列表*/
 .goods-list {padding:.8rem 0 .5rem;}
@@ -44,7 +59,7 @@ nav .active .icon-sales {background-image:url(../img/sort-nav-3-active.png);}
 .goods-list .item a + p {height:2rem;font:1.2rem/2rem "";color:#999;}
 .goods-list .item .price {display:inline-block;font-size:1.7rem;line-height:3.6rem;}
 .goods-list .item .price em {font-size:1.2rem;}
-.goods-list .item .i-cart {position:absolute;right:0;width:3.2rem;height:3.4rem;background:url(../img/icon-add-cart.png) no-repeat 0 center;background-size:1.9rem 1.8rem;}
+.goods-list .item .i-cart {position:absolute;right:0;width:3.2rem;height:3.4rem;background:url(../img/i-cart.png) no-repeat 0 center;background-size:1.9rem 1.8rem;}
 /*商品列表为空*/
 .goods-list-none p {margin-top:10rem;text-align:center;font-size:1.4rem;}
 .goods-list-none p img {width:1.5rem;height:1.5rem;}
@@ -52,3 +67,4 @@ nav .active .icon-sales {background-image:url(../img/sort-nav-3-active.png);}
 .load-more span {display:block;margin:.8rem auto;width:8rem;border-radius:.3rem;background:#989874;color:#fff;font-size:1.3rem;line-height:2rem;text-align:center;}
 /*~~~~~~ 分类列表页 END ~~~~~~*/
 .flash-sale-icon:before{margin-left: -2.31%;margin-top: -2.31%;}
+.before-pri{font-size:1.2rem;}
